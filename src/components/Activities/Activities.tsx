@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import './Activities.css';
 
 const activities = [
-  { name: 'climbing', image: '/public/images/escalaola.jpeg' },
-  { name: 'hiking', image: '/public/images/lascuevas.jpeg' },
-  { name: 'adventure', image: '/public/images/cordillerario.jpeg' },
-  { name: 'winery', image: '/public/images/bodega.jpeg' },
+  { name: 'climbing', image: 'images/escalaola.jpeg' },
+  { name: 'hiking', image: 'images/lascuevas.jpeg' },
+  { name: 'adventure', image: 'images/cordillerario.jpeg' },
+  { name: 'winery', image: 'images/bodega.jpeg' },
 ];
 
 const Activities: React.FC = () => {
