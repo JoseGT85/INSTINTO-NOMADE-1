@@ -20,7 +20,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src="/public/images/logonuevo.webp" alt="Instinto Nómade Logo" className="navbar-logo-img" />
+          <img src="/public/images/logonuevo.png" alt="Instinto Nómade Logo" className="navbar-logo-img" />
           <span className="navbar-logo-text">Instinto Nómade</span>
         </div>
         <div className="navbar-right">

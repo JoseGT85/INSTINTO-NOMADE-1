@@ -11,7 +11,7 @@
 }
 
 .navbar-logo-img {
-  @apply h-10 w-auto mr-2;
+  @apply h-12 w-auto mr-2;
 }
 
 .navbar-logo-text {
