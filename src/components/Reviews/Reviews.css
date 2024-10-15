@@ -1,0 +1,45 @@
+.reviews-section {
+  @apply py-12 relative;
+}
+
+.reviews-container {
+  @apply container mx-auto px-4;
+}
+
+.reviews-title {
+  @apply text-3xl font-bold mb-8 text-center text-gray-800 dark:text-white;
+}
+
+.reviews-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.review-card {
+  @apply p-6 rounded-lg shadow-md transition-all duration-300 flex flex-col justify-between;
+  background-color: rgba(255, 255, 255, 0.8);
+  height: 100%;
+}
+
+.dark .review-card {
+  background-color: rgba(31, 41, 55, 0.8);
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+.review-comment {
+  @apply text-gray-600 dark:text-gray-300 mb-4;
+}
+
+.review-footer {
+  @apply flex justify-between items-center;
+}
+
+.review-author {
+  @apply font-semibold text-gray-800 dark:text-white;
+}
+
+.review-rating {
+  @apply flex items-center;
+}

@@ -1,0 +1,82 @@
+.navbar {
+  @apply bg-gradient-to-r from-orange-500 to-yellow-500 text-white p-4;
+}
+
+.navbar-container {
+  @apply container mx-auto flex justify-between items-center;
+}
+
+.navbar-logo {
+  @apply flex items-center;
+}
+
+.navbar-logo-img {
+  @apply h-8 w-auto mr-2;
+}
+
+.navbar-logo-text {
+  @apply text-2xl font-bold;
+}
+
+.navbar-right {
+  @apply flex items-center;
+}
+
+.navbar-menu {
+  @apply flex items-center space-x-4;
+}
+
+.navbar-link {
+  @apply flex items-center hover:text-yellow-200;
+}
+
+.navbar-icon {
+  @apply mr-1;
+}
+
+.navbar-controls {
+  @apply flex items-center space-x-2 ml-4;
+}
+
+.theme-toggle {
+  @apply p-2 rounded-full hover:bg-orange-600;
+}
+
+.language-select {
+  @apply bg-transparent border-none text-white;
+}
+
+.menu-toggle {
+  @apply hidden p-2 rounded-full hover:bg-orange-600;
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    @apply relative;
+  }
+
+  .navbar-right {
+    @apply flex items-center justify-end;
+  }
+
+  .navbar-menu {
+    @apply hidden absolute top-full right-0 flex-col items-end w-64 bg-orange-500 p-4 space-y-2 mt-2 rounded-lg shadow-lg;
+    z-index: 1000;
+  }
+
+  .navbar-menu.open {
+    @apply flex;
+  }
+
+  .navbar-link {
+    @apply w-full py-2 text-right;
+  }
+
+  .menu-toggle {
+    @apply block;
+  }
+
+  .navbar-controls {
+    @apply flex-row justify-end ml-0;
+  }
+}

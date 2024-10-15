@@ -1,0 +1,31 @@
+.footer {
+  @apply bg-gray-800 text-white py-8;
+}
+
+.footer-container {
+  @apply container mx-auto flex flex-col md:flex-row justify-between items-center;
+}
+
+.footer-info {
+  @apply mb-4 md:mb-0;
+}
+
+.footer-title {
+  @apply text-2xl font-bold;
+}
+
+.footer-subtitle {
+  @apply text-sm;
+}
+
+.footer-social {
+  @apply flex space-x-4;
+}
+
+.footer-social-link {
+  @apply hover:text-blue-400;
+}
+
+.footer-copyright {
+  @apply mt-8 text-center text-sm;
+}

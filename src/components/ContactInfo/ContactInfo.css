@@ -1,0 +1,36 @@
+.contact-info-section {
+  @apply py-12 relative;
+}
+
+.contact-info-container {
+  @apply container mx-auto px-4;
+}
+
+.contact-info-title {
+  @apply text-3xl font-bold mb-8 text-center text-gray-800 dark:text-white;
+}
+
+.contact-info-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+}
+
+.contact-info-item {
+  @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center transition-all duration-300 hover:shadow-lg;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .contact-info-item {
+  background-color: rgba(31, 41, 55, 0.8);
+}
+
+.contact-info-icon {
+  @apply text-4xl text-orange-500 mb-4 mx-auto;
+}
+
+.contact-info-item h3 {
+  @apply text-xl font-semibold mb-2 text-gray-800 dark:text-white;
+}
+
+.contact-info-item p {
+  @apply text-gray-600 dark:text-gray-300;
+}

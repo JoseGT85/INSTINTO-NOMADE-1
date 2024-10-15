@@ -1,0 +1,19 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Estilos personalizados */
+.navbar-gradient {
+  background: linear-gradient(90deg, #FF8C00, #FFA500);
+}
+
+.dark .navbar-gradient {
+  background: linear-gradient(90deg, #FF4500, #FF6347);
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Otros estilos personalizados aquí */

@@ -1,0 +1,52 @@
+{
+  "navbar": {
+    "activities": "Actividades",
+    "contact": "Contacto",
+    "destinations": "Destinos",
+    "aboutUs": "Quiénes Somos"
+  },
+  "activities": {
+    "title": "Nuestras Actividades",
+    "climbing": "Escalada",
+    "hiking": "Senderismo",
+    "adventure": "Turismo Aventura",
+    "winery": "Bodegas",
+    "climbingDesc": "Desafía tus límites en nuestras rutas de escalada",
+    "hikingDesc": "Explora hermosos senderos naturales",
+    "adventureDesc": "Vive experiencias únicas y emocionantes",
+    "wineryDesc": "Descubre los sabores de nuestros vinos locales"
+  },
+  "reviews": {
+    "title": "Reseñas de Clientes",
+    "juanComment": "Excelente experiencia, muy recomendable. Los guías son expertos y las actividades son emocionantes.",
+    "mariaComment": "Los paisajes son impresionantes y el servicio al cliente es excepcional. Definitivamente volveré.",
+    "carlosComment": "Una aventura inolvidable. Las actividades están bien organizadas y son adecuadas para todos los niveles.",
+    "anaComment": "Increíbles destinos y alojamientos. La atención a los detalles hace que cada viaje sea especial."
+  },
+  "contact": {
+    "title": "Contacto y Reservas",
+    "phone": "Teléfono",
+    "email": "Correo Electrónico",
+    "address": "Dirección",
+    "schedule": "Horario de Atención"
+  },
+  "footer": {
+    "slogan": "Descubre el mundo con nosotros",
+    "rights": "Todos los derechos reservados."
+  },
+  "aboutUs": {
+    "title": "Quiénes Somos",
+    "mission": {
+      "title": "Nuestra Misión",
+      "content": "En TurismoReact, nuestra misión es proporcionar experiencias de viaje inolvidables y enriquecedoras que conecten a las personas con nuevas culturas, lugares y aventuras. Nos esforzamos por ofrecer un servicio personalizado y de alta calidad, siempre respetando el medio ambiente y las comunidades locales."
+    },
+    "vision": {
+      "title": "Nuestra Visión",
+      "content": "Aspiramos a ser líderes en la industria del turismo, reconocidos por nuestra innovación, sostenibilidad y excelencia en el servicio al cliente. Buscamos inspirar a las personas a explorar el mundo, fomentar el entendimiento intercultural y contribuir positivamente a las comunidades que visitamos."
+    }
+  },
+  "destinations": {
+    "title": "Nuestros Destinos",
+    "bookNow": "Reservar ahora"
+  }
+}

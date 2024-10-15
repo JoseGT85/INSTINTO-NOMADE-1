@@ -1,0 +1,52 @@
+{
+  "navbar": {
+    "activities": "Activities",
+    "contact": "Contact",
+    "destinations": "Destinations",
+    "aboutUs": "About Us"
+  },
+  "activities": {
+    "title": "Our Activities",
+    "climbing": "Climbing",
+    "hiking": "Hiking",
+    "adventure": "Adventure Tourism",
+    "winery": "Wineries",
+    "climbingDesc": "Challenge your limits on our climbing routes",
+    "hikingDesc": "Explore beautiful natural trails",
+    "adventureDesc": "Live unique and exciting experiences",
+    "wineryDesc": "Discover the flavors of our local wines"
+  },
+  "reviews": {
+    "title": "Customer Reviews",
+    "juanComment": "Excellent experience, highly recommended. The guides are experts and the activities are exciting.",
+    "mariaComment": "The landscapes are impressive and the customer service is exceptional. I will definitely come back.",
+    "carlosComment": "An unforgettable adventure. The activities are well organized and suitable for all levels.",
+    "anaComment": "Amazing destinations and accommodations. The attention to detail makes each trip special."
+  },
+  "contact": {
+    "title": "Contact and Reservations",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "schedule": "Office Hours"
+  },
+  "footer": {
+    "slogan": "Discover the world with us",
+    "rights": "All rights reserved."
+  },
+  "aboutUs": {
+    "title": "About Us",
+    "mission": {
+      "title": "Our Mission",
+      "content": "At TurismoReact, our mission is to provide unforgettable and enriching travel experiences that connect people with new cultures, places, and adventures. We strive to offer personalized and high-quality service, always respecting the environment and local communities."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "content": "We aspire to be leaders in the tourism industry, recognized for our innovation, sustainability, and excellence in customer service. We seek to inspire people to explore the world, foster intercultural understanding, and contribute positively to the communities we visit."
+    }
+  },
+  "destinations": {
+    "title": "Our Destinations",
+    "bookNow": "Book Now"
+  }
+}

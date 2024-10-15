@@ -1,0 +1,33 @@
+.about-us-section {
+  @apply py-12 bg-gray-50 dark:bg-gray-900;
+}
+
+.about-us-container {
+  @apply container mx-auto px-4;
+}
+
+.about-us-title {
+  @apply text-3xl font-bold mb-8 text-center flex items-center justify-center;
+}
+
+.about-us-icon {
+  @apply mr-2 text-orange-500;
+}
+
+.about-us-content {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+}
+
+.about-us-mission,
+.about-us-vision {
+  @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md;
+}
+
+.about-us-subtitle {
+  @apply text-2xl font-semibold mb-4 text-orange-500;
+}
+
+.about-us-mission p,
+.about-us-vision p {
+  @apply text-gray-700 dark:text-gray-300;
+}
