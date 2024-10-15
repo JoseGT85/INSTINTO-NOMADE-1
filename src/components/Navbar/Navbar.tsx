@@ -1,14 +1,31 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Compass, Phone, MapPin, Sun, Moon, Info, Menu, X, Globe } from 'lucide-react';
+import { Compass, Phone, MapPin, Sun, Moon, Info, Menu, X } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import './Navbar.css';
+
+// Opciones de logo
+const logoOptions = [
+  { src: '/public/images/logonuevo.webp', alt: 'Mountain Logo' },
+
+];
+
+// Opciones de título
+const titleOptions = [
+  'Instinto Nómade',
+  'Aventuras Sin Límites',
+  'Explora el Mundo',
+];
 
 const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const { t, i18n } = useTranslation();
+  
+  // Estado para el logo y título seleccionados (puedes cambiar el índice para probar diferentes opciones)
+  const [selectedLogo] = useState(logoOptions[0]);
+  const [selectedTitle] = useState(titleOptions[0]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -20,8 +37,8 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src="/images/logo.png" alt="Instinto Nómade Logo" className="navbar-logo-img" />
-          <span className="navbar-logo-text">Instinto Nómade</span>
+          <img src={selectedLogo.src} alt={selectedLogo.alt} className="navbar-logo-img" />
+          <span className="navbar-logo-text">{selectedTitle}</span>
         </div>
         <div className="navbar-right">
           <ul className={`navbar-menu ${isOpen ? 'open' : ''}`}>
@@ -35,10 +52,13 @@ const Navbar: React.FC = () => {
               {theme === 'light' ? <Moon /> : <Sun />}
             </button>
             <div className="language-select">
-              <Globe className="navbar-icon" />
-              <select onChange={(e) => changeLanguage(e.target.value)} value={i18n.language}>
-                <option value="es">ES</option>
-                <option value="en">EN</option>
+              <select 
+                onChange={(e) => changeLanguage(e.target.value)} 
+                value={i18n.language}
+                className="language-select-dropdown"
+              >
+                <option value="es" className="language-option">ES</option>
+                <option value="en" className="language-option">EN</option>
               </select>
             </div>
             <button className="menu-toggle" onClick={toggleMenu}>

@@ -1,5 +1,7 @@
 .navbar {
   @apply bg-gradient-to-r from-orange-500 to-yellow-500 text-white p-4;
+  position: relative;
+  z-index: 20;
 }
 
 .navbar-container {
@@ -11,7 +13,7 @@
 }
 
 .navbar-logo-img {
-  @apply h-8 w-auto mr-2;
+  @apply h-10 w-auto mr-2;
 }
 
 .navbar-logo-text {
@@ -23,7 +25,7 @@
 }
 
 .navbar-menu {
-  @apply flex items-center space-x-4;
+  @apply hidden md:flex items-center space-x-4;
 }
 
 .navbar-link {
@@ -43,40 +45,32 @@
 }
 
 .language-select {
-  @apply bg-transparent border-none text-white;
+  @apply relative;
+}
+
+.language-select-dropdown {
+  @apply appearance-none bg-orange-600 text-white border border-orange-400 rounded px-2 py-1 pr-8 cursor-pointer;
+}
+
+.language-option {
+  @apply bg-orange-600 text-white;
+}
+
+.language-select::after {
+  content: '▼';
+  @apply absolute right-2 top-1/2 transform -translate-y-1/2 text-white pointer-events-none;
 }
 
 .menu-toggle {
-  @apply hidden p-2 rounded-full hover:bg-orange-600;
+  @apply md:hidden p-2 rounded-full hover:bg-orange-600;
 }
 
 @media (max-width: 768px) {
-  .navbar-container {
-    @apply relative;
-  }
-
-  .navbar-right {
-    @apply flex items-center justify-end;
-  }
-
   .navbar-menu {
-    @apply hidden absolute top-full right-0 flex-col items-end w-64 bg-orange-500 p-4 space-y-2 mt-2 rounded-lg shadow-lg;
-    z-index: 1000;
+    @apply absolute top-full left-0 right-0 flex-col items-start bg-orange-500 p-4 space-y-2;
   }
 
   .navbar-menu.open {
     @apply flex;
-  }
-
-  .navbar-link {
-    @apply w-full py-2 text-right;
-  }
-
-  .menu-toggle {
-    @apply block;
-  }
-
-  .navbar-controls {
-    @apply flex-row justify-end ml-0;
   }
 }
