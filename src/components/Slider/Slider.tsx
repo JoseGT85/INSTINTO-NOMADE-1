@@ -4,9 +4,9 @@ import './Slider.css';
 
 const Slider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
+  const [nextSlide, setNextSlide] = useState(0);
   const slides = [
-    '/images/view-warrior-leader-from-ancient-maya-inca-empire.jpg',
+'/images/view-warrior-leader-from-ancient-maya-inca-empire.jpg',
 '/images/potrerillos.jpeg',
 '/images/cordillerario.jpeg',
 '/images/puentedelinca.jpeg',
@@ -17,25 +17,19 @@ const Slider: React.FC = () => {
   ];
 
   const changeSlide = useCallback((direction: 'next' | 'prev') => {
-    if (!isTransitioning) {
-      setIsTransitioning(true);
-      setCurrentSlide(prevSlide => {
-        const nextSlide = direction === 'next'
-          ? (prevSlide + 1) % slides.length
-          : (prevSlide - 1 + slides.length) % slides.length;
-        return nextSlide;
-      });
-      setTimeout(() => setIsTransitioning(false), 500);
-    }
-  }, [isTransitioning, slides.length]);
-
-  const nextSlide = useCallback(() => changeSlide('next'), [changeSlide]);
-  const prevSlide = useCallback(() => changeSlide('prev'), [changeSlide]);
+    setCurrentSlide(prevSlide => {
+      if (direction === 'next') {
+        return (prevSlide + 1) % slides.length;
+      } else {
+        return (prevSlide - 1 + slides.length) % slides.length;
+      }
+    });
+  }, [slides.length]);
 
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
+    const interval = setInterval(() => changeSlide('next'), 5000);
     return () => clearInterval(interval);
-  }, [nextSlide]);
+  }, [changeSlide]);
 
   return (
     <div className="slider-section">
@@ -43,15 +37,15 @@ const Slider: React.FC = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className={`slide ${index === currentSlide ? 'active' : ''} ${isTransitioning ? 'transitioning' : ''}`}
+            className={`slide ${index === currentSlide ? 'active' : ''}`}
           >
             <img src={slide} alt={`Slide ${index + 1}`} />
           </div>
         ))}
-        <button onClick={prevSlide} className="slider-button slider-button-prev">
+        <button onClick={() => changeSlide('prev')} className="slider-button slider-button-prev">
           <ChevronLeft />
         </button>
-        <button onClick={nextSlide} className="slider-button slider-button-next">
+        <button onClick={() => changeSlide('next')} className="slider-button slider-button-next">
           <ChevronRight />
         </button>
       </div>

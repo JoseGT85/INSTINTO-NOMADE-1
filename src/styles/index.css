@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos personalizados */
-.dark {
-  @apply bg-gray-900 text-white;
-}
-
-.dark .bg-white {
-  @apply bg-gray-800;
-}
-
-.dark .text-gray-600 {
-  @apply text-gray-300;
-}
-
-.dark .bg-gray-100 {
-  @apply bg-gray-800;
-}
-
-.dark .bg-blue-600 {
-  @apply bg-blue-800;
-}
-
 /* Estilos para el fondo con efecto de deslizamiento */
 body {
   background-image: url('/images/background-slide.jpg');
@@ -32,42 +11,42 @@ body {
   transition: background-position 0.5s ease-out;
 }
 
-/* Estilos para las secciones con fondo semi-transparente */
-.content-section {
+/* Contenedor principal para el efecto parallax */
+.parallax-container {
   position: relative;
-  z-index: 2;
+  overflow: hidden;
 }
 
-.content-section::before {
-  content: '';
+/* Fondo parallax */
+.parallax-background {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(5px);
+  background-image: url('/public/images/parqueaconcagua.jpg');
+  background-size: cover;
+  background-position: center;
   z-index: -1;
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  will-change: transform;
 }
 
-.content-section:hover::before {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(8px);
-}
-
-.dark .content-section::before {
-  background: rgba(31, 41, 55, 0.6);
-}
-
-.dark .content-section:hover::before {
-  background: rgba(31, 41, 55, 0.7);
-}
-
-/* Excluir el slider del fondo semi-transparente */
-.slider-section {
+/* Contenido sobre el fondo parallax */
+.parallax-content {
   position: relative;
   z-index: 1;
+}
+
+/* Estilos para las secciones con fondo semi-transparente */
+.content-section {
+  position: relative;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.dark .content-section {
+  background-color: rgba(31, 41, 55, 0.7);
 }
 
 /* Estilos para subpáginas */
@@ -83,6 +62,14 @@ body {
 
 .dark .subpage-container {
   background-color: rgba(31, 41, 55, 0.8);
+}
+
+/* Estilos específicos para navbar, slider y footer */
+.navbar,
+.slider-section,
+.footer {
+  position: relative;
+  z-index: 10;
 }
 
 /* Resto de tus estilos personalizados... */

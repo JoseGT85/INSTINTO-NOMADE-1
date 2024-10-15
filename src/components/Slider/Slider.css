@@ -1,5 +1,6 @@
 .slider-section {
   @apply relative w-full h-96 overflow-hidden;
+  z-index: 10;
 }
 
 .slider {
@@ -7,15 +8,13 @@
 }
 
 .slide {
-  @apply absolute top-0 left-0 w-full h-full opacity-0 transition-opacity duration-500 ease-in-out;
+  @apply absolute top-0 left-0 w-full h-full;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 .slide.active {
-  @apply opacity-100;
-}
-
-.slide.transitioning {
-  @apply opacity-0;
+  opacity: 1;
 }
 
 .slide img {
@@ -23,7 +22,7 @@
 }
 
 .slider-button {
-  @apply absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-10 transition-opacity duration-300 opacity-0;
+  @apply absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full z-20 transition-opacity duration-300 opacity-0;
 }
 
 .slider:hover .slider-button {
