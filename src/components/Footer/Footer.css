@@ -1,14 +1,30 @@
 .footer {
-  @apply bg-gray-800 text-white py-8;
   position: relative;
   z-index: 20;
+  padding: 2rem 0;
+  background: black;
+  color: whitesmoke;
 }
 
-.footer-container {
-  @apply container mx-auto px-4 flex justify-between items-center;
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/public/images/rocasrio\ \(1\).jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: -1;
 }
 
 .footer-content {
+  @apply container mx-auto px-4 flex justify-between items-center;
+}
+
+.footer-info {
   @apply flex flex-col items-start;
 }
 
@@ -33,11 +49,11 @@
 }
 
 @media (max-width: 640px) {
-  .footer-container {
+  .footer-content {
     @apply flex-col items-center;
   }
 
-  .footer-content {
+  .footer-info {
     @apply items-center mb-4;
   }
 

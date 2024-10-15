@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="footer">
-      <div className="footer-container">
-        <div className="footer-content">
+      <div className="footer-content">
+        <div className="footer-info">
           <h3 className="footer-title">Instinto Nómade</h3>
           <p className="footer-subtitle">{t('footer.slogan')}</p>
         </div>
