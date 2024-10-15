@@ -28,7 +28,12 @@
     "phone": "Phone",
     "email": "Email",
     "address": "Address",
-    "schedule": "Office Hours"
+    "schedule": "Office Hours",
+    "whatsapp": "Contact via WhatsApp",
+    "sendEmail": "Send email",
+    "viewMap": "View on Google Maps",
+    "weekdays": "Monday to Friday: 9:00 AM - 6:00 PM",
+    "saturday": "Saturday: 10:00 AM - 2:00 PM"
   },
   "footer": {
     "slogan": "Discover the world with us",

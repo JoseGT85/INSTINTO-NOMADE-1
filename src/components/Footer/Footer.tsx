@@ -1,23 +1,27 @@
 import React from 'react';
 import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
+import './Footer.css';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <footer className="bg-gray-800 text-white py-8">
-      <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="mb-4 md:mb-0">
-          <h3 className="text-2xl font-bold">TurismoReact</h3>
-          <p>Descubre el mundo con nosotros</p>
+    <footer className="footer">
+      <div className="footer-container">
+        <div className="footer-content">
+          <h3 className="footer-title">Instinto Nómade</h3>
+          <p className="footer-subtitle">{t('footer.slogan')}</p>
         </div>
-        <div className="flex space-x-4">
-          <a href="#" className="hover:text-blue-400"><Facebook /></a>
-          <a href="#" className="hover:text-blue-400"><Twitter /></a>
-          <a href="#" className="hover:text-blue-400"><Instagram /></a>
-          <a href="#" className="hover:text-blue-400"><Youtube /></a>
+        <div className="footer-social">
+          <a href="#" className="footer-social-link"><Facebook /></a>
+          <a href="#" className="footer-social-link"><Twitter /></a>
+          <a href="#" className="footer-social-link"><Instagram /></a>
+          <a href="#" className="footer-social-link"><Youtube /></a>
         </div>
       </div>
-      <div className="mt-8 text-center text-sm">
-        <p>&copy; 2024 TurismoReact. Todos los derechos reservados.</p>
+      <div className="footer-copyright">
+        <p>&copy; 2024 Instinto Nómade. {t('footer.rights')}</p>
       </div>
     </footer>
   );

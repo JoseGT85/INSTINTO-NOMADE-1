@@ -7,10 +7,32 @@ const ContactInfo: React.FC = () => {
   const { t } = useTranslation();
 
   const contactItems = [
-    { icon: Phone, title: 'contact.phone', content: '+1 234 567 890' },
-    { icon: Mail, title: 'contact.email', content: 'info@instintonomade.com' },
-    { icon: MapPin, title: 'contact.address', content: 'Calle Aventura 123, Ciudad Viajera' },
-    { icon: Clock, title: 'contact.schedule', content: ['Lunes a Viernes: 9:00 AM - 6:00 PM', 'Sábados: 10:00 AM - 2:00 PM'] },
+    { 
+      icon: Phone, 
+      title: 'contact.phone', 
+      content: '+1 234 567 890',
+      link: 'https://wa.me/1234567890',
+      linkText: 'Contactar por WhatsApp'
+    },
+    { 
+      icon: Mail, 
+      title: 'contact.email', 
+      content: 'info@instintonomade.com',
+      link: 'mailto:info@instintonomade.com',
+      linkText: 'Enviar correo'
+    },
+    { 
+      icon: MapPin, 
+      title: 'contact.address', 
+      content: 'Calle Aventura 123, Ciudad Viajera',
+      link: 'https://goo.gl/maps/your-google-maps-link-here',
+      linkText: 'Ver en Google Maps'
+    },
+    { 
+      icon: Clock, 
+      title: 'contact.schedule', 
+      content: ['Lunes a Viernes: 9:00 AM - 6:00 PM', 'Sábados: 10:00 AM - 2:00 PM']
+    },
   ];
 
   return (
@@ -26,6 +48,11 @@ const ContactInfo: React.FC = () => {
                 item.content.map((line, i) => <p key={i}>{line}</p>)
               ) : (
                 <p>{item.content}</p>
+              )}
+              {item.link && (
+                <a href={item.link} target="_blank" rel="noopener noreferrer" className="contact-info-link">
+                  {item.linkText}
+                </a>
               )}
             </div>
           ))}

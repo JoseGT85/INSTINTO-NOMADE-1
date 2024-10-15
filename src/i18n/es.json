@@ -28,7 +28,12 @@
     "phone": "Teléfono",
     "email": "Correo Electrónico",
     "address": "Dirección",
-    "schedule": "Horario de Atención"
+    "schedule": "Horario de Atención",
+    "whatsapp": "Contactar por WhatsApp",
+    "sendEmail": "Enviar correo",
+    "viewMap": "Ver en Google Maps",
+    "weekdays": "Lunes a Viernes: 9:00 AM - 6:00 PM",
+    "saturday": "Sábados: 10:00 AM - 2:00 PM"
   },
   "footer": {
     "slogan": "Descubre el mundo con nosotros",
