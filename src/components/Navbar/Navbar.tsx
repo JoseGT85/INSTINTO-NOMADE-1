@@ -39,13 +39,13 @@ const Navbar: React.FC = () => {
                 onClick={() => changeLanguage('es')} 
                 className={`language-button ${i18n.language === 'es' ? 'active' : ''}`}
               >
-                <img src="/public/images/flag-es.png.png" alt="Español" className="flag-icon" />
+                <img src="/images/flag-es.png.png" alt="Español" className="flag-icon" />
               </button>
               <button 
                 onClick={() => changeLanguage('en')} 
                 className={`language-button ${i18n.language === 'en' ? 'active' : ''}`}
               >
-                <img src="/public/images/flag-en.png.png" alt="English" className="flag-icon" />
+                <img src="/images/flag-en.png.png" alt="English" className="flag-icon" />
               </button>
             </div>
             <button className="menu-toggle" onClick={toggleMenu}>
