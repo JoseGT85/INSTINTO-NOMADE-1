@@ -6,6 +6,7 @@ const Slider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [nextSlide, setNextSlide] = useState(0);
   const slides = [
+'/images/parqueaconcagua.jpg',
 '/images/view-warrior-leader-from-ancient-maya-inca-empire.jpg',
 '/images/potrerillos.jpeg',
 '/images/cordillerario.jpeg',
