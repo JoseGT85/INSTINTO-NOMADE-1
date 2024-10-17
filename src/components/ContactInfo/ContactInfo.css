@@ -39,6 +39,18 @@
   @apply text-gray-600 dark:text-gray-300;
 }
 
+.contact-info-links {
+  @apply mt-4 flex flex-col items-center;
+}
+
 .contact-info-link {
-  @apply mt-4 inline-block text-orange-500 hover:text-orange-600 transition-colors duration-300;
+  @apply inline-block text-orange-500 hover:text-orange-600 transition-colors duration-300 mb-2;
+}
+
+.whatsapp-link {
+  @apply flex items-center justify-center bg-green-500 text-white px-3 py-1 rounded-full hover:bg-green-600 transition-colors duration-300;
+}
+
+.whatsapp-icon {
+  @apply mr-1 h-4 w-4;
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import './Destinations.css';
 
 const destinations = [
@@ -12,24 +13,28 @@ const destinations = [
 ];
 
 const Destinations: React.FC = () => {
+  const { t } = useTranslation();
+
   return (
-    <div className="subpage-container">
-      <h1 className="text-3xl font-bold mb-6 text-center">Nuestros Destinos</h1>
-      <div className="destinations-grid">
-        {destinations.map((destination) => (
-          <Link to="/contacto" key={destination.id} className="destination-card">
-            <div className="destination-image-container">
-              <img src={destination.image} alt={destination.name} className="destination-image" />
-              <div className="destination-overlay">
-                <span>Reservar ahora</span>
+    <div className="destinations-page">
+      <div className="destinations-container">
+        <h1 className="destinations-title">{t('destinations.title')}</h1>
+        <div className="destinations-grid">
+          {destinations.map((destination) => (
+            <Link to="/contacto" key={destination.id} className="destination-card">
+              <div className="destination-image-container">
+                <img src={destination.image} alt={destination.name} className="destination-image" />
+                <div className="destination-overlay">
+                  <span>{t('destinations.bookNow')}</span>
+                </div>
               </div>
-            </div>
-            <div className="destination-content">
-              <h2 className="destination-name">{destination.name}</h2>
-              <p className="destination-country">{destination.country}</p>
-            </div>
-          </Link>
-        ))}
+              <div className="destination-content">
+                <h2 className="destination-name">{destination.name}</h2>
+                <p className="destination-country">{destination.country}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );

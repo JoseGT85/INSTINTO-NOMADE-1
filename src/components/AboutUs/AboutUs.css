@@ -1,33 +1,97 @@
-.about-us-section {
-  @apply py-12 bg-gray-50 dark:bg-gray-900;
+.about-us-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  font-family: Arial, sans-serif;
+  background-image: url('/images/background-slide.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.about-us-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
 }
 
 .about-us-container {
-  @apply container mx-auto px-4;
+  max-width: 800px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  position: relative;
+}
+
+.dark .about-us-container {
+  background-color: rgba(31, 41, 55, 0.8);
 }
 
 .about-us-title {
-  @apply text-3xl font-bold mb-8 text-center flex items-center justify-center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dark .about-us-title {
+  color: #fff;
 }
 
 .about-us-icon {
-  @apply mr-2 text-orange-500;
+  margin-right: 0.5rem;
+  color: #f97316;
 }
 
 .about-us-content {
-  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
 }
 
-.about-us-mission,
-.about-us-vision {
-  @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md;
+.about-us-section {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark .about-us-section {
+  background-color: rgba(55, 65, 81, 0.9);
 }
 
 .about-us-subtitle {
-  @apply text-2xl font-semibold mb-4 text-orange-500;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #f97316;
 }
 
-.about-us-mission p,
-.about-us-vision p {
-  @apply text-gray-700 dark:text-gray-300;
+.about-us-section p {
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+.dark .about-us-section p {
+  color: #d1d5db;
+}
+
+@media (max-width: 768px) {
+  .about-us-content {
+    grid-template-columns: 1fr;
+  }
 }

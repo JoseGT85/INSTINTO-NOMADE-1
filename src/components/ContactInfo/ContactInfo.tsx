@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import './ContactInfo.css';
 
@@ -11,8 +11,13 @@ const ContactInfo: React.FC = () => {
       icon: Phone, 
       title: 'contact.phone', 
       content: '+1 234 567 890',
-      link: 'https://wa.me/1234567890',
-      linkText: 'Contactar por WhatsApp'
+      link: 'tel:+1234567890',
+      linkText: 'Llamar',
+      whatsapp: {
+        icon: MessageCircle,
+        link: 'https://wa.me/1234567890',
+        linkText: 'WhatsApp'
+      }
     },
     { 
       icon: Mail, 
@@ -49,11 +54,19 @@ const ContactInfo: React.FC = () => {
               ) : (
                 <p>{item.content}</p>
               )}
-              {item.link && (
-                <a href={item.link} target="_blank" rel="noopener noreferrer" className="contact-info-link">
-                  {item.linkText}
-                </a>
-              )}
+              <div className="contact-info-links">
+                {item.link && (
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="contact-info-link">
+                    {item.linkText}
+                  </a>
+                )}
+                {item.whatsapp && (
+                  <a href={item.whatsapp.link} target="_blank" rel="noopener noreferrer" className="contact-info-link whatsapp-link">
+                    <item.whatsapp.icon className="whatsapp-icon" />
+                    {item.whatsapp.linkText}
+                  </a>
+                )}
+              </div>
             </div>
           ))}
         </div>
