@@ -53,4 +53,5 @@
 
 .whatsapp-icon {
   @apply mr-1 h-4 w-4;
+  border-radius: 10rem;
 }

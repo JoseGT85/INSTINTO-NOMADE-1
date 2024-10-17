@@ -14,9 +14,9 @@ const Contact: React.FC = () => {
           <div className="contact-item">
             <Phone className="contact-icon" />
             <h2>{t('contact.phone')}</h2>
-            <p>+1 234 567 890</p>
+            <p>+549 2613377921</p>
             <a 
-              href="https://wa.me/1234567890" 
+              href="https://wa.me/+5492613377921" 
               target="_blank" 
               rel="noopener noreferrer"
               className="contact-link"
@@ -38,9 +38,9 @@ const Contact: React.FC = () => {
           <div className="contact-item">
             <MapPin className="contact-icon" />
             <h2>{t('contact.address')}</h2>
-            <p>Calle Aventura 123, Ciudad Viajera</p>
+            <p>Avenida San Martin 1122, Mendoza, Argentina</p>
             <a 
-              href="https://goo.gl/maps/your-google-maps-link-here" 
+              href="https://maps.app.goo.gl/UkDYyzWWbPrR3SNT6" 
               target="_blank" 
               rel="noopener noreferrer"
               className="contact-link"

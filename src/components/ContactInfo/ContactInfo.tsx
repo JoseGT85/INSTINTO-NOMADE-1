@@ -10,12 +10,12 @@ const ContactInfo: React.FC = () => {
     { 
       icon: Phone, 
       title: 'contact.phone', 
-      content: '+1 234 567 890',
-      link: 'tel:+1234567890',
+      content: '+549 2613377921',
+      link: '+549 2613377921',
       linkText: 'Llamar',
       whatsapp: {
         icon: MessageCircle,
-        link: 'https://wa.me/1234567890',
+        link: 'https://wa.me/+5492613377921',
         linkText: 'WhatsApp'
       }
     },
@@ -29,14 +29,14 @@ const ContactInfo: React.FC = () => {
     { 
       icon: MapPin, 
       title: 'contact.address', 
-      content: 'Calle Aventura 123, Ciudad Viajera',
-      link: 'https://goo.gl/maps/your-google-maps-link-here',
+      content: 'Avenida San Martin 1122, Mendoza, Argentina',
+      link: 'https://maps.app.goo.gl/UkDYyzWWbPrR3SNT6',
       linkText: 'Ver en Google Maps'
     },
     { 
       icon: Clock, 
       title: 'contact.schedule', 
-      content: ['Lunes a Viernes: 9:00 AM - 6:00 PM', 'Sábados: 10:00 AM - 2:00 PM']
+      content: ['Lunes a Viernes: 9:00 AM-6:00 PM', 'Sábados: 10:00 AM-2:00 PM']
     },
   ];
 
