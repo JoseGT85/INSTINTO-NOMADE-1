@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import './ContactInfo.css';
 
@@ -10,14 +10,9 @@ const ContactInfo: React.FC = () => {
     { 
       icon: Phone, 
       title: 'contact.phone', 
-      content: '+549 2613377921',
-      link: '+549 2613377921',
-      linkText: 'Llamar',
-      whatsapp: {
-        icon: MessageCircle,
-        link: 'https://wa.me/+5492613377921',
-        linkText: 'WhatsApp'
-      }
+      content: '+1 234 567 890',
+      link: 'tel:+1234567890',
+      linkText: 'Llamar'
     },
     { 
       icon: Mail, 
@@ -29,19 +24,19 @@ const ContactInfo: React.FC = () => {
     { 
       icon: MapPin, 
       title: 'contact.address', 
-      content: 'Avenida San Martin 1122, Mendoza, Argentina',
-      link: 'https://maps.app.goo.gl/UkDYyzWWbPrR3SNT6',
+      content: 'Calle Aventura 123, Ciudad Viajera',
+      link: 'https://goo.gl/maps/your-google-maps-link-here',
       linkText: 'Ver en Google Maps'
     },
     { 
       icon: Clock, 
       title: 'contact.schedule', 
-      content: ['Lunes a Viernes: 9:00 AM-6:00 PM', 'Sábados: 10:00 AM-2:00 PM']
+      content: ['Lunes a Viernes: 9:00 AM - 6:00 PM', 'Sábados: 10:00 AM - 2:00 PM']
     },
   ];
 
   return (
-    <div className="contact-info-section">
+    <div id="contact-info" className="contact-info-section">
       <div className="contact-info-container">
         <h2 className="contact-info-title">{t('contact.title')}</h2>
         <div className="contact-info-grid">
@@ -58,12 +53,6 @@ const ContactInfo: React.FC = () => {
                 {item.link && (
                   <a href={item.link} target="_blank" rel="noopener noreferrer" className="contact-info-link">
                     {item.linkText}
-                  </a>
-                )}
-                {item.whatsapp && (
-                  <a href={item.whatsapp.link} target="_blank" rel="noopener noreferrer" className="contact-info-link whatsapp-link">
-                    <item.whatsapp.icon className="whatsapp-icon" />
-                    {item.whatsapp.linkText}
                   </a>
                 )}
               </div>

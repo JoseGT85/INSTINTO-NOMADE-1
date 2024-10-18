@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import { useTranslation } from 'react-i18next';
 import './Activities.css';
 
 const activities = [
-  { name: 'climbing', image: 'images/escalaola.jpeg' },
-  { name: 'hiking', image: 'images/lascuevas.jpeg' },
-  { name: 'adventure', image: 'images/cordillerario.jpeg' },
-  { name: 'winery', image: 'images/bodega.jpeg' },
+  { name: 'climbing', image: '/images/escalaola.jpeg'},
+  { name: 'hiking', image: '/images/potrerillos.jpeg'},
+  { name: 'adventure', image: 'images/cordillerario.jpeg'},
+  { name: 'winery', image: '/images/bodega.jpeg'},
 ];
 
 const Activities: React.FC = () => {
@@ -19,7 +19,7 @@ const Activities: React.FC = () => {
         <h2 className="activities-title">{t('activities.title')}</h2>
         <div className="activities-grid">
           {activities.map((activity, index) => (
-            <Link to="/contacto" key={index} className="activity-card">
+            <HashLink smooth to="/#contact-info" key={index} className="activity-card">
               <div className="activity-image-container">
                 <img 
                   src={activity.image} 
@@ -33,7 +33,7 @@ const Activities: React.FC = () => {
               <div className="activity-content">
                 <h3 className="activity-name">{t(`activities.${activity.name}`) || activity.name}</h3>
               </div>
-            </Link>
+            </HashLink>
           ))}
         </div>
       </div>

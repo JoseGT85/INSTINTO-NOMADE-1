@@ -4,8 +4,9 @@ import './Slider.css';
 
 const Slider: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [nextSlide, setNextSlide] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const slides = [
+
 '/images/parqueaconcagua.jpg',
 '/images/view-warrior-leader-from-ancient-maya-inca-empire.jpg',
 '/images/potrerillos.jpeg',
@@ -18,19 +19,25 @@ const Slider: React.FC = () => {
   ];
 
   const changeSlide = useCallback((direction: 'next' | 'prev') => {
-    setCurrentSlide(prevSlide => {
-      if (direction === 'next') {
-        return (prevSlide + 1) % slides.length;
-      } else {
-        return (prevSlide - 1 + slides.length) % slides.length;
-      }
-    });
-  }, [slides.length]);
+    if (!isTransitioning) {
+      setIsTransitioning(true);
+      setCurrentSlide(prevSlide => {
+        const nextSlide = direction === 'next'
+          ? (prevSlide + 1) % slides.length
+          : (prevSlide - 1 + slides.length) % slides.length;
+        return nextSlide;
+      });
+      setTimeout(() => setIsTransitioning(false), 500);
+    }
+  }, [isTransitioning, slides.length]);
+
+  const nextSlide = useCallback(() => changeSlide('next'), [changeSlide]);
+  const prevSlide = useCallback(() => changeSlide('prev'), [changeSlide]);
 
   useEffect(() => {
-    const interval = setInterval(() => changeSlide('next'), 5000);
+    const interval = setInterval(nextSlide, 5000);
     return () => clearInterval(interval);
-  }, [changeSlide]);
+  }, [nextSlide]);
 
   return (
     <div className="slider-section">
@@ -43,10 +50,10 @@ const Slider: React.FC = () => {
             <img src={slide} alt={`Slide ${index + 1}`} />
           </div>
         ))}
-        <button onClick={() => changeSlide('prev')} className="slider-button slider-button-prev">
+        <button onClick={prevSlide} className="slider-button slider-button-prev">
           <ChevronLeft />
         </button>
-        <button onClick={() => changeSlide('next')} className="slider-button slider-button-next">
+        <button onClick={nextSlide} className="slider-button slider-button-next">
           <ChevronRight />
         </button>
       </div>

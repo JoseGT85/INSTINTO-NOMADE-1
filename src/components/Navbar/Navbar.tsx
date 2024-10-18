@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Compass, Phone, MapPin, Sun, Moon, Info, Menu, X } from 'lucide-react';
+import { Compass, MapPin, Sun, Moon, Info, Menu, X } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import './Navbar.css';
@@ -26,7 +26,6 @@ const Navbar: React.FC = () => {
         <div className="navbar-right">
           <ul className={`navbar-menu ${isOpen ? 'open' : ''}`}>
             <li><Link to="/" className="navbar-link" onClick={toggleMenu}><Compass className="navbar-icon" />{t('navbar.activities')}</Link></li>
-            <li><Link to="/contacto" className="navbar-link" onClick={toggleMenu}><Phone className="navbar-icon" />{t('navbar.contact')}</Link></li>
             <li><Link to="/destinos" className="navbar-link" onClick={toggleMenu}><MapPin className="navbar-icon" />{t('navbar.destinations')}</Link></li>
             <li><Link to="/quienes-somos" className="navbar-link" onClick={toggleMenu}><Info className="navbar-icon" />{t('navbar.aboutUs')}</Link></li>
           </ul>
