@@ -10,8 +10,8 @@ const ContactInfo: React.FC = () => {
     { 
       icon: Phone, 
       title: 'contact.phone', 
-      content: '+1 234 567 890',
-      link: 'tel:+1234567890',
+      content: '+549 2613377921',
+      link: 'tel:+549 2613377921',
       linkText: 'Llamar'
     },
     { 
@@ -24,8 +24,8 @@ const ContactInfo: React.FC = () => {
     { 
       icon: MapPin, 
       title: 'contact.address', 
-      content: 'Calle Aventura 123, Ciudad Viajera',
-      link: 'https://goo.gl/maps/your-google-maps-link-here',
+      content: 'Avenida Las Heras 1222, Mendoza, Argentina',
+      link: 'https://maps.app.goo.gl/UkDYyzWWbPrR3SNT6',
       linkText: 'Ver en Google Maps'
     },
     { 

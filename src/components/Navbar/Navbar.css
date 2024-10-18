@@ -1,5 +1,10 @@
 .navbar {
   @apply bg-gradient-to-r from-orange-500 to-yellow-500 text-white p-4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .navbar-container {
@@ -11,7 +16,7 @@
 }
 
 .navbar-logo-img {
-  @apply h-12 w-auto mr-2;
+  @apply h-10 w-auto mr-2;
 }
 
 .navbar-logo-text {
@@ -39,7 +44,7 @@
 }
 
 .theme-toggle {
-  @apply p-2 rounded-full hover:bg-orange-400;
+  @apply p-2 rounded-full hover:bg-orange-600;
 }
 
 .language-select {
@@ -47,12 +52,11 @@
 }
 
 .language-button {
-  @apply p-1 rounded-full hover:bg-[white] hover:text-white transition-colors duration-300;
+  @apply p-1 rounded-full hover:bg-black hover:text-white transition-colors duration-300;
 }
 
-
 .language-button.active {
-  @apply bg-orange-400;
+  @apply bg-orange-600;
 }
 
 .flag-icon {
@@ -66,9 +70,10 @@
 @media (max-width: 768px) {
   .navbar-menu {
     @apply absolute top-full left-0 right-0 flex-col items-start bg-orange-500 p-4 space-y-2;
+    display: none;
   }
 
   .navbar-menu.open {
-    @apply flex;
+    display: flex;
   }
 }

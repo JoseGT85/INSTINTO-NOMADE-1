@@ -13,13 +13,30 @@ const activities = [
 const Activities: React.FC = () => {
   const { t } = useTranslation();
 
+  const handleClick = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    if (window.innerWidth <= 768) { // Asumiendo que 768px es el breakpoint para móviles
+      event.preventDefault();
+      const link = event.currentTarget;
+      link.classList.add('activity-hover');
+      setTimeout(() => {
+        window.location.href = link.href;
+      }, 300); // 300ms de retardo
+    }
+  };
+
   return (
     <section className="activities-section">
       <div className="activities-container">
         <h2 className="activities-title">{t('activities.title')}</h2>
         <div className="activities-grid">
           {activities.map((activity, index) => (
-            <HashLink smooth to="/#contact-info" key={index} className="activity-card">
+            <HashLink 
+              smooth 
+              to="/#contact-info" 
+              key={index} 
+              className="activity-card"
+              onClick={handleClick}
+            >
               <div className="activity-image-container">
                 <img 
                   src={activity.image} 

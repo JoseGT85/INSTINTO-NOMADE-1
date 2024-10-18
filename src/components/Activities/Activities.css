@@ -54,3 +54,14 @@
 .activity-card:hover .activity-overlay {
   @apply opacity-100;
 }
+
+/* Nuevo estilo para el efecto hover en móviles */
+@media (max-width: 768px) {
+  .activity-card.activity-hover .activity-overlay {
+    opacity: 1;
+  }
+  
+  .activity-card.activity-hover .activity-image {
+    transform: scale(1.1);
+  }
+}
