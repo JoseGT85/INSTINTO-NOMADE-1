@@ -19,9 +19,9 @@ const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="navbar-logo">
+        <Link to="/" className="navbar-logo-link">
           <img src="/images/logoIN.png" alt="Instinto Nómade Logo" className="navbar-logo-img" />
-        </div>
+        </Link>
         <div className="navbar-right">
           <ul className={`navbar-menu ${isOpen ? 'open' : ''}`}>
             <li><Link to="/" className="navbar-link" onClick={toggleMenu}><Compass className="navbar-icon" />{t('navbar.activities')}</Link></li>
