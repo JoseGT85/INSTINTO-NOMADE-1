@@ -11,6 +11,7 @@ import AboutUs from './components/AboutUs/AboutUs';
 import WhatsAppButton from './components/WhatsAppButton/WhatsAppButton';
 import { ThemeProvider } from './contexts/ThemeContext';
 import './styles/index.css';
+import './App.css';
 
 function App() {
   return (

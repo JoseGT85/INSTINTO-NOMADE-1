@@ -20,8 +20,7 @@ const Navbar: React.FC = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-logo">
-          <img src="/images/logonuevo.png" alt="Instinto Nómade Logo" className="navbar-logo-img" />
-          <span className="navbar-logo-text">Instinto Nómade</span>
+          <img src="/images/logoIN.png" alt="Instinto Nómade Logo" className="navbar-logo-img" />
         </div>
         <div className="navbar-right">
           <ul className={`navbar-menu ${isOpen ? 'open' : ''}`}>

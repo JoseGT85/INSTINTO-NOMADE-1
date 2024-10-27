@@ -4,6 +4,7 @@
 
 .reviews-container {
   @apply container mx-auto px-4;
+  
 }
 
 .reviews-title {
@@ -18,6 +19,7 @@
   @apply p-6 rounded-lg shadow-md transition-all duration-300 flex flex-col justify-between;
   background-color: rgba(255, 255, 255, 0.8);
   height: 100%;
+  border-radius: 15px;
 }
 
 .dark .review-card {
