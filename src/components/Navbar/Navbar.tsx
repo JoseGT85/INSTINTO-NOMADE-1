@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Compass, MapPin, Sun, Moon, Info, Menu, X } from 'lucide-react';
 import { useTheme } from '../../contexts/ThemeContext';
@@ -10,6 +10,19 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
+  // Estado para monitorear el scroll
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Hook para detectar el scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 90); // Cambia el estado si el scroll es mayor a 50px
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const changeLanguage = (lng: string) => {
@@ -17,11 +30,13 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo-link">
-          <img src="/images/logoIN.png" alt="Instinto Nómade Logo" className="navbar-logo-img" />
-        </Link>
+        <div className="navbar-logo">
+          <Link to="/" className="navbar-logo-link">
+            <img src="/images/logoIN.png" alt="Instinto Nómade Logo" className="navbar-logo-img" />
+          </Link>
+        </div>
         <div className="navbar-right">
           <ul className={`navbar-menu ${isOpen ? 'open' : ''}`}>
             <li><Link to="/" className="navbar-link" onClick={toggleMenu}><Compass className="navbar-icon" />{t('navbar.activities')}</Link></li>

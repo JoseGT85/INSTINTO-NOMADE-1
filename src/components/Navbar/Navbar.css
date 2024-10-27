@@ -6,6 +6,13 @@
   right: 0;
   z-index: 1000;
   border-radius: 8px;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* Estilo para cuando el usuario hace scroll */
+.navbar-scrolled {
+  background-color: rgba(255, 165, 0, 0.8); /* Color semitransparente */
+  backdrop-filter: blur(5px);
 }
 
 .navbar-container {
@@ -13,13 +20,21 @@
 }
 
 .navbar-logo {
-  @apply flex items-center;
+  @apply flex items-center relative;
+ 
+}
+
+.navbar-logo-link {
+  position: relative;
+  z-index: 1010;
 }
 
 .navbar-logo-img {
-  @apply h-10 w-auto mr-2;
+  @apply h-10 w-auto mr-2 cursor-pointer;
+  border-radius: 8px;
 }
 
+/* Otros estilos previos */
 .navbar-logo-text {
   @apply text-2xl font-bold;
 }
@@ -68,6 +83,7 @@
   @apply md:hidden p-2 rounded-full hover:bg-orange-600;
 }
 
+/* Estilos para el menú en dispositivos móviles */
 @media (max-width: 768px) {
   .navbar-menu {
     @apply absolute top-full left-0 right-0 flex-col items-start bg-orange-500 p-4 space-y-2;
