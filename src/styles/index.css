@@ -41,7 +41,7 @@ body, html {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  z-index: -1;
+  z-index: -2;
 }
 
 /* Overlay para mejorar la legibilidad del contenido */
@@ -62,7 +62,7 @@ body, html {
   backdrop-filter: blur(3px);
 }
 
-/* Asegúrate de que las secciones de contenido no tengan márgenes inferiores excesivos */
+
 .activities-section,
 .reviews-section,
 .contact-info-section {
@@ -70,14 +70,29 @@ body, html {
   padding-bottom: 2rem;
 }
 
-/* Ajuste para el footer */
+
 .footer {
   margin-top: auto;
 }
 
-/* Media queries para ajustes responsivos */
+
+@media (max-width: 1024px) {
+  .background-image {
+    background-attachment: fixed;
+  }
+}
+
+
 @media (max-width: 768px) {
   .background-image {
+    background-attachment: scroll;
+  }
+}
+
+
+@media (max-width: 375px) {
+  .background-image {
+    background-size: 100%;
     background-attachment: scroll;
   }
 }
