@@ -48,7 +48,10 @@
 }
 
 .navbar-link {
-  @apply flex items-center hover:text-yellow-200;
+  @apply flex items-center justify-start hover:text-yellow-200;
+  width: 100%;
+  padding-left: 0;
+  text-align: left;
 }
 
 .navbar-icon {
@@ -86,11 +89,14 @@
 /* Estilos para el menú en dispositivos móviles */
 @media (max-width: 768px) {
   .navbar-menu {
-    @apply absolute top-full left-0 right-0 flex-col items-start bg-orange-500 p-4 space-y-2;
+    @apply absolute top-full left-0 right-0 flex-col items-start bg-orange-500 p-2 space-y-3;
     display: none;
+    align-items: baseline;
+    padding-left: 0rem;
   }
 
   .navbar-menu.open {
     display: flex;
   }
+
 }
