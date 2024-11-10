@@ -86,6 +86,7 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
+  
 }
 
 .destination-card:hover .destination-image {
@@ -104,10 +105,12 @@
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
+  border-radius: 15px;
 }
 
 .destination-card:hover .destination-overlay {
   opacity: 1;
+  
 }
 
 .destination-overlay span {
@@ -116,7 +119,7 @@
   text-transform: uppercase;
   padding: 0.5rem 1rem;
   border: 2px solid #fff;
-  border-radius: 4px;
+  
 }
 
 .destination-content {
@@ -149,10 +152,14 @@
 
 @media (max-width: 768px) {
   .destinations-grid {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   }
-  
+
   .destinations-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 1rem 0;
   }
 }
