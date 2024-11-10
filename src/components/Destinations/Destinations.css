@@ -155,6 +155,8 @@
     display: grid;
     gap: 1rem;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 0 auto; /* Centra el contenedor y asegura bordes iguales */
+    max-width: 95%; /* Limita el ancho total y permite espacio de margen */
   }
 
   .destinations-title {
@@ -163,3 +165,28 @@
     margin: 1rem 0;
   }
 }
+
+@media (max-width: 674px) {
+  .destinations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: 90%; /* Ajusta ligeramente el ancho para pantallas más pequeñas */
+  }
+
+  .destinations-title {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .destinations-grid {
+    grid-template-columns: 1fr;
+    max-width: 95%;
+    gap: 0.5rem;
+    margin: 0 auto;
+  }
+
+  .destinations-title {
+    font-size: 1.5rem;
+  }
+}
+
