@@ -20,9 +20,9 @@
 }
 
 .navbar-logo {
-  @apply flex items-center relative;
- 
+  @apply flex items-center relative overflow-hidden;
 }
+
 
 .navbar-logo-link {
   position: relative;
@@ -30,7 +30,7 @@
 }
 
 .navbar-logo-img {
-  @apply h-10 w-auto mr-2 cursor-pointer;
+  @apply h-16 w-auto mr-2 cursor-pointer;
   border-radius: 8px;
 }
 
