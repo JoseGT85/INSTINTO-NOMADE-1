@@ -78,24 +78,18 @@ body, html {
 
 @media (max-width: 1024px) {
   .background-image {
-    position: absolute; /* Cambiar de fixed a absolute en móviles */
     background-attachment: scroll; /* Quitar parallax en móviles */
-    background-size: contain; /* Ajuste para evitar redimensionamiento */
   }
 }
 
 @media (max-width: 768px) {
   .background-image {
-    position: absolute;
     background-attachment: scroll;
-    background-size: contain;
   }
 }
 
 @media (max-width: 375px) {
   .background-image {
-    position: absolute;
     background-attachment: scroll;
-    background-size: cover;
   }
 }
