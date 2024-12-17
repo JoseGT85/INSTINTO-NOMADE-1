@@ -12,8 +12,18 @@
 }
 
 .contact-info-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8;
+  @apply flex flex-wrap justify-center gap-8;
 }
+
+.contact-info-item {
+  @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center w-full max-w-xs;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+}
+
+
+
+
 
 .contact-info-item {
   @apply bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md text-center transition-all duration-300 ease-in-out;

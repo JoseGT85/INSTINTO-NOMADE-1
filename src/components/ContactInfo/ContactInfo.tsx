@@ -21,18 +21,6 @@ const ContactInfo: React.FC = () => {
       link: 'mailto:info@instintonomade.com',
       linkText: 'Enviar correo'
     },
-    { 
-      icon: MapPin, 
-      title: 'contact.address', 
-      content: 'Avenida Las Heras 1222, Mendoza, Argentina',
-      link: 'https://maps.app.goo.gl/UkDYyzWWbPrR3SNT6',
-      linkText: 'Ver en Google Maps'
-    },
-    { 
-      icon: Clock, 
-      title: 'contact.schedule', 
-      content: ['Lunes a Viernes: 9:00 AM - 6:00 PM', 'Sábados: 10:00 AM - 2:00 PM']
-    },
   ];
 
   return (
