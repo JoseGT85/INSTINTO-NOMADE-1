@@ -23,6 +23,14 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Nuevo useEffect para manejar el tema persistente
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme && savedTheme !== theme) {
+      toggleTheme();
+    }
+  }, []);
+
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const changeLanguage = (lng: string) => {
@@ -37,7 +45,14 @@ const Navbar: React.FC = () => {
         behavior: 'smooth'
       });
     } else {
+      const currentTheme = theme;
       window.location.href = '/';
+      setTimeout(() => {
+        const newTheme = localStorage.getItem('theme');
+        if (newTheme && newTheme !== currentTheme) {
+          toggleTheme();
+        }
+      }, 100);
     }
   };
 
