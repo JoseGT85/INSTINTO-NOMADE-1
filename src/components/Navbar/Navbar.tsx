@@ -16,7 +16,7 @@ const Navbar: React.FC = () => {
   // Hook para detectar el scroll
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 90); // Cambia el estado si el scroll es mayor a 50px
+      setIsScrolled(window.scrollY > 90); // Cambia el estado si el scroll es mayor a 90px
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -29,11 +29,23 @@ const Navbar: React.FC = () => {
     i18n.changeLanguage(lng);
   };
 
+  const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    if (window.location.pathname === '/') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      window.location.href = '/';
+    }
+  };
+
   return (
     <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
       <div className="navbar-container">
         <div className="navbar-logo">
-          <Link to="/" className="navbar-logo-link">
+          <Link to="/" onClick={scrollToTop} className="navbar-logo-link">
             <img src="/images/logoIN.png" alt="Instinto Nómade Logo" className="navbar-logo-img" />
           </Link>
         </div>
