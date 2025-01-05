@@ -10,7 +10,7 @@ const NavbarLogo: React.FC<NavbarLogoProps> = ({ onLogoClick }) => {
     <div className="navbar-logo-wrapper">
       <Link to="/" onClick={onLogoClick} className="navbar-logo-link">
         <img 
-          src="/images/logoprin1.png" 
+          src="/images/Logoprin1.png" 
           alt="Instinto Nómade" 
           className="navbar-logo-img"
         />
