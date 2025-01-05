@@ -1,77 +1,70 @@
 .navbar {
-  @apply bg-gradient-to-r from-orange-500 to-yellow-500 text-white p-4;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  
-  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+  @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
 }
 
-/* Estilo para cuando el usuario hace scroll */
 .navbar-scrolled {
-  background-color: rgba(255, 165, 0, 0.8); /* Color semitransparente */
-  backdrop-filter: blur(5px);
+  background: linear-gradient(to right, #FF8C00, #FFA500);
 }
 
 .navbar-container {
-  @apply container mx-auto flex justify-between items-center;
+  @apply container mx-auto px-4 flex justify-between items-center h-20;
 }
 
-.navbar-logo {
-  @apply flex items-center relative overflow-hidden;
+/* Logo styles */
+.navbar-logo-wrapper {
+  @apply relative z-50;
 }
-
 
 .navbar-logo-link {
-  position: relative;
-  z-index: 1010;
+  @apply block transition-transform duration-300;
 }
 
 .navbar-logo-img {
-  @apply h-16 w-auto mr-2 cursor-pointer;
-  border-radius: 8px;
+  @apply h-40 w-auto transition-all duration-300;
+  position: fixed;
+  top: 15%;
+  left: 7%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  pointer-events: auto;
 }
 
-/* Otros estilos previos */
-.navbar-logo-text {
-  @apply text-2xl font-bold;
+.navbar-scrolled .navbar-logo-img {
+  @apply h-20;
+  position: static;
+  transform: none;
+  opacity: 1;
+  pointer-events: auto;
 }
 
-.navbar-right {
-  @apply flex items-center;
-}
-
+/* Menu styles */
 .navbar-menu {
-  @apply hidden md:flex items-center space-x-4;
+  @apply flex items-center justify-end space-x-6;
+}
+
+.navbar-menu.open {
+  @apply flex flex-col md:flex-row absolute top-full left-0 right-0 bg-orange-500 md:bg-transparent p-4 space-y-4 md:space-y-0;
 }
 
 .navbar-link {
-  @apply flex items-center justify-start hover:text-yellow-200;
-  width: 100%;
-  padding-left: 0;
-  text-align: left;
+  @apply flex items-center text-white hover:text-yellow-200 transition-colors duration-200;
+  padding: 0 1rem;
 }
 
 .navbar-icon {
-  @apply mr-1;
+  @apply mr-2 h-4 w-4;
 }
 
+/* Controls styles */
 .navbar-controls {
-  @apply flex items-center space-x-2 ml-4;
+  @apply flex items-center space-x-4;
 }
 
-.theme-toggle {
-  @apply p-2 rounded-full hover:bg-orange-600;
-}
-
-.language-select {
-  @apply flex items-center space-x-1;
-}
-
-.language-button {
-  @apply p-1 rounded-full hover:bg-orange-500 hover:text-white transition-colors duration-300;
+.theme-toggle,
+.language-button,
+.menu-toggle {
+  @apply p-2 rounded-full text-white hover:bg-orange-600 transition-colors duration-200;
 }
 
 .language-button.active {
@@ -82,21 +75,22 @@
   @apply w-6 h-4 object-cover;
 }
 
-.menu-toggle {
-  @apply md:hidden p-2 rounded-full hover:bg-orange-600;
-}
-
-/* Estilos para el menú en dispositivos móviles */
 @media (max-width: 768px) {
   .navbar-menu {
-    @apply absolute top-full left-0 right-0 flex-col items-start bg-orange-500 p-2 space-y-3;
-    display: none;
-    align-items: baseline;
-    padding-left: 0rem;
+    @apply bg-orange-500/90 backdrop-blur-sm;
+  }
+  
+  .navbar-link {
+    @apply text-sm py-2;
   }
 
-  .navbar-menu.open {
-    display: flex;
+  .navbar-logo-img {
+    @apply h-40 w-auto transition-all duration-300;
+    position: fixed;
+    top: 12%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+    pointer-events: auto;
   }
-
 }
