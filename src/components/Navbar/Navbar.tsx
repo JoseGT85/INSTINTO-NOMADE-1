@@ -54,7 +54,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : 'navbar-noScrolled'}`}>
       <div className="navbar-container">
         <NavbarLogo onLogoClick={scrollToTop} />
         <div className="navbar-right">
@@ -68,7 +68,6 @@ const Navbar: React.FC = () => {
             toggleTheme={toggleTheme}
             i18n={i18n}
             changeLanguage={changeLanguage}
-            isOpen={isOpen}
             toggleMenu={toggleMenu}
           />
         </div>

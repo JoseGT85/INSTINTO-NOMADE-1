@@ -1,12 +1,11 @@
 import React from 'react';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun } from 'lucide-react';
 
 interface NavbarControlsProps {
   theme: string;
   toggleTheme: () => void;
   i18n: any;
   changeLanguage: (lng: string) => void;
-  isOpen: boolean;
   toggleMenu: () => void;
 }
 
@@ -15,8 +14,6 @@ const NavbarControls: React.FC<NavbarControlsProps> = ({
   toggleTheme,
   i18n,
   changeLanguage,
-  isOpen,
-  toggleMenu
 }) => {
   return (
     <div className="navbar-controls">
@@ -37,9 +34,7 @@ const NavbarControls: React.FC<NavbarControlsProps> = ({
           <img src="/images/flag-en.png.png" alt="English" className="flag-icon" />
         </button>
       </div>
-      <button className="menu-toggle" onClick={toggleMenu}>
-        {isOpen ? <X /> : <Menu />}
-      </button>
+      
     </div>
   );
 };
