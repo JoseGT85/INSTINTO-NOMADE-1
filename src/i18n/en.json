@@ -1,19 +1,17 @@
 {
   "navbar": {
     "activities": "Home",
-    "contact": "Contact",
-    "destinations": "Destinations",
     "aboutUs": "About Us"
   },
   "activities": {
     "title": "Our Activities",
-    "climbing": "Climbing",
-    "hiking": "Hiking and Rafting",
-    "adventure": "Adventure Tourism",
+    "Trekking": "Trekking",
+    "Etrekking and Rafting": "Trekking and Rafting",
+    "Etrekking and Rappel": "Trekking and Rappel",
     "winery": "Wineries",
-    "climbingDesc": "Challenge your limits on our climbing routes",
-    "hikingDesc": "Explore beautiful natural trails",
-    "adventureDesc": "Live unique and exciting experiences",
+    "TrekkingDesc": "Live unique and exciting experiences",
+    "Etrekking and RaftingDesc": "Explore beautiful nature trails and rafting on our rivers",
+    "Etrekking and RappelDesc": "Challenge your limits on our Rappel routes",
     "wineryDesc": "Discover the flavors of our local wines"
   },
   "reviews": {

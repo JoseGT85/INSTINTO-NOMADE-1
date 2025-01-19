@@ -1,19 +1,17 @@
 {
   "navbar": {
     "activities": "Inicio",
-    "contact": "Contacto",
-    "destinations": "Destinos",
     "aboutUs": "Quiénes Somos"
   },
   "activities": {
     "title": "Nuestras Actividades",
-    "climbing": "Escalada",
-    "hiking": "Senderismo y Rafting",
-    "adventure": "Turismo Aventura",
+    "Trekking": "Trekking",
+    "Trekking y Rafting": "Trekking y Rafting",
+    "Trekking y Rappel": "Trekking y Rappel",
     "winery": "Bodegas",
-    "climbingDesc": "Desafía tus límites en nuestras rutas de escalada",
-    "hikingDesc": "Explora hermosos senderos naturales",
-    "adventureDesc": "Vive experiencias únicas y emocionantes",
+    "TrekkingDesc": "Vive experiencias únicas y emocionantes",
+    "Trekking y RaftingDesc": "Explora hermosos senderos naturales y Rafting en nuestros ríos",
+    "Trekking y RappelDesc": "Desafía tus límites en nuestras rutas de Rappel",
     "wineryDesc": "Descubre los sabores de nuestros vinos locales"
   },
   "reviews": {

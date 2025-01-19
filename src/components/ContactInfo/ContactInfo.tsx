@@ -10,15 +10,15 @@ const ContactInfo: React.FC = () => {
     { 
       icon: Phone, 
       title: 'contact.phone', 
-      content: '+549 2613377921',
-      link: 'tel:+549 2613377921',
+      content: '+54 9 2616634368',
+      link: 'tel:+54 9 2616634368',
       linkText: 'Llamar'
     },
     { 
       icon: Mail, 
       title: 'contact.email', 
-      content: 'info@instintonomade.com',
-      link: 'mailto:info@instintonomade.com',
+      content: 'instintonomade2024@gmail.com',
+      link: 'mailto:instintonomade2024@gmail.com',
       linkText: 'Enviar correo'
     },
   ];
