@@ -7,8 +7,6 @@
   background: linear-gradient(to right, #FF8C00, #FFA500);
 }
 
-
-
 .navbar-right{
   display: flex;
   flex-direction: row;
@@ -80,10 +78,20 @@
   @apply w-6 h-4 object-cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 492px) {
  
+  .navbar-controls {
+    display: flex;
+    align-items: end;
+    margin-left: 7rem;
+}
+  
   .navbar-link {
     @apply text-sm py-2;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: -1rem;
+    margin-right: -1rem;
   }
 
   .navbar-logo-img {
@@ -94,5 +102,11 @@
     transform: translate(-50%, -50%);
     opacity: 1;
     pointer-events: auto;
+  }
+
+  .navbar-right{
+    display: inline-block;
+    flex-direction: row;
+    justify-content: flex-end;
   }
 }

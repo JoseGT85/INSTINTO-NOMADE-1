@@ -56,9 +56,19 @@
 }
 
 /* Media query para dispositivos móviles */
-@media (max-width: 768px) {
+@media (max-width: 492px) {
   .slider-section {
     height: 70vh;
     padding-top: 48px; /* Ajusta este valor según la altura de tu navbar */
+    margin-top: -1rem;
+  }
+  
+  .slider-button {
+    padding: 8px;
+  }
+
+  .slide img {
+    height: 100%;
+    object-position: center;
   }
 }

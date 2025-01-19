@@ -65,7 +65,7 @@
 }
 
 /* Nuevo estilo para el efecto hover en móviles */
-@media (max-width: 768px) {
+@media (max-width: 492px) {
   .activity-card.activity-hover .activity-overlay {
     opacity: 1;
   }
@@ -73,4 +73,41 @@
   .activity-card.activity-hover .activity-image {
     transform: scale(1.1);
   }
+
+    .activities-section {
+      @apply py-6;
+    }
+  
+    .activities-container {
+      @apply px-2;
+    }
+  
+    .activities-title {
+      @apply text-2xl mb-4;
+    }
+  
+    .activities-grid {
+      @apply gap-3;
+    }
+  
+    .activity-card {
+      @apply shadow-sm;
+    }
+  
+    .activity-image {
+      @apply h-36;
+    }
+  
+    .activity-content {
+      @apply p-3;
+    }
+  
+    .activity-name {
+      @apply text-lg;
+    }
+  
+    .activity-description {
+      @apply text-sm;
+    }
+
 }
