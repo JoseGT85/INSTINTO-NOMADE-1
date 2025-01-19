@@ -98,7 +98,7 @@
     @apply h-40 w-auto transition-all duration-300;
     position: fixed;
     top: 12%;
-    left: 15%;
+    left: 17%;
     transform: translate(-50%, -50%);
     opacity: 1;
     pointer-events: auto;
