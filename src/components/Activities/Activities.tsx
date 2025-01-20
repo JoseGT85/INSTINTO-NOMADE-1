@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import './Activities.css';
 
 const activities = [
-  { name: 'Trekking', image: '/images/escalaola.jpeg'},
+  { name: 'Trekking', image: '/images/Trekking.jpeg'},
   { name: 'Trekking y Rafting', image: '/images/potrerillos.jpeg'},
-  { name: 'Trekking y Rappel', image: 'images/cordillerario.jpeg'},
+  { name: 'Trekking y Rappel', image: 'images/Rappel.jpeg'},
   { name: 'winery', image: '/images/bodega.jpeg'},
 ];
 
