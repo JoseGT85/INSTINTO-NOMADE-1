@@ -17,8 +17,8 @@ const ContactInfo: React.FC = () => {
     { 
       icon: Mail, 
       title: 'contact.email', 
-      content: 'instintonomade2024@gmail.com',
-      link: 'mailto:instintonomade2024@gmail.com',
+      content: 'instintonomade@gmail.com',
+      link: 'mailto:instintonomade@gmail.com',
       linkText: 'Enviar correo'
     },
   ];

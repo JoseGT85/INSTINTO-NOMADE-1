@@ -10,17 +10,24 @@ const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const { t, i18n } = useTranslation();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true); // Estado para controlar la visibilidad de la navbar
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 90);
+      if (window.scrollY === 0) {
+        // Mostrar el navbar solo cuando estás en la parte superior
+        setIsNavbarVisible(true);
+      } else {
+        // Ocultar el navbar al hacer scroll hacia abajo
+        setIsNavbarVisible(false);
+      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Cambiar tema si está guardado en localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme && savedTheme !== theme) {
@@ -28,51 +35,61 @@ const Navbar: React.FC = () => {
     }
   }, []);
 
+  // Alternar menú móvil
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  // Cambiar idioma
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
 
+  // Scroll suave al inicio
   const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    if (window.location.pathname === '/') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    } else {
-      const currentTheme = theme;
-      window.location.href = '/';
-      setTimeout(() => {
-        const newTheme = localStorage.getItem('theme');
-        if (newTheme && newTheme !== currentTheme) {
-          toggleTheme();
-        }
-      }, 100);
-    }
+    e.preventDefault(); // Previene el comportamiento predeterminado del enlace
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // Desplazamiento suave
+    });
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'navbar-scrolled' : 'navbar-noScrolled'}`}>
+    <>
+      {/* Logo siempre visible */}
+      <NavbarLogo onLogoClick={scrollToTop} />
+
+      {/* Navbar que se oculta/muestra según el scroll */}
+      <nav className={`navbar ${isNavbarVisible ? 'visible' : 'hidden'}`}>
       <div className="navbar-container">
-        <NavbarLogo onLogoClick={scrollToTop} />
-        <div className="navbar-right">
-          <NavbarMenu 
-            isOpen={isOpen} 
-            toggleMenu={toggleMenu} 
-            t={t} 
-          />
-          <NavbarControls 
-            theme={theme}
-            toggleTheme={toggleTheme}
-            i18n={i18n}
-            changeLanguage={changeLanguage}
-            toggleMenu={toggleMenu}
-          />
-        </div>
-      </div>
-    </nav>
+  {/* Logo */}
+  <div className="navbar-logo-wrapper">
+    <NavbarLogo onLogoClick={scrollToTop} />
+  </div>
+
+  {/* Botones y controles */}
+  <div className="navbar-right">
+    <div className="navbar-menu">
+      {/* Botón Inicio */}
+      <a href="/#home" onClick={scrollToTop} className="navbar-link">
+        Inicio
+      </a>
+
+      {/* Botón Quiénes somos */}
+      <a href="/quienes-somos" className="navbar-link">
+        {t('navbar.aboutUs')}
+      </a>
+    </div>
+
+    {/* Controles (Tema e Idioma) */}
+    <NavbarControls 
+      theme={theme}
+      toggleTheme={toggleTheme}
+      i18n={i18n}
+      changeLanguage={changeLanguage}
+    />
+  </div>
+</div>
+      </nav>
+    </>
   );
 };
 

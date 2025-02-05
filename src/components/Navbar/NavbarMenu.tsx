@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Compass, Info } from 'lucide-react';
+import { HashLink } from 'react-router-hash-link';
+import './Navbar.css';
 
 interface NavbarMenuProps {
   isOpen: boolean;
@@ -8,20 +8,37 @@ interface NavbarMenuProps {
   t: (key: string) => string;
 }
 
-const NavbarMenu: React.FC<NavbarMenuProps> = ({ t }) => {
+const NavbarMenu: React.FC<NavbarMenuProps> = ({ isOpen, toggleMenu, t }) => {
   return (
-    <ul className={`navbar-menu`}>
-      <li>
-        <Link to="/" className="navbar-link">
-          <Compass className="navbar-icon" />{t('navbar.activities')}
-        </Link>
-      </li>
-      <li>
-        <Link to="/quienes-somos" className="navbar-link" >
-          <Info className="navbar-icon" />{t('navbar.aboutUs')}
-        </Link>
-      </li>
-    </ul>
+    <>
+      {/* Botón hamburguesa para móviles */}
+      <button
+        className="menu-toggle"
+        onClick={toggleMenu}
+      >
+        ☰
+      </button>
+
+      {/* Menú principal */}
+      <div className={`navbar-menu ${isOpen ? 'open' : ''}`}>
+        <HashLink
+          smooth
+          to="/#home"
+          className="navbar-link"
+          onClick={toggleMenu}
+        >
+          {t('navbar.home')}
+        </HashLink>
+        <HashLink
+          smooth
+          to="/quienes-somos"
+          className="navbar-link"
+          onClick={toggleMenu}
+        >
+          {t('navbar.aboutUs')}
+        </HashLink>
+      </div>
+    </>
   );
 };
 

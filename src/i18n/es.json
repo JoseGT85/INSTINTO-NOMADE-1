@@ -6,32 +6,17 @@
   "activities": {
     "title": "Nuestras Actividades",
     "Trekking": "Trekking",
+    "TrekkingDesc": "Trekking en el cerro Mailhos ubicado a 90 kilómetros de la ciudad de Mendoza, en Valle del Sol, Las Vegas. Tiene un recorrido de 8 kilómetros de ida y vuelta, con una duración de 3 horas aproximadamente y una altitud de casi 3.000 metros sobre el nivel del mar. Dificultad media-baja, sin dificultad técnica y vistas espectaculares.",
     "Trekking y Rafting": "Trekking y Rafting",
+    "Trekking y RaftingDesc": "Rafting de 12 kilómetros con duración de 1 hora aproximadamente por el Río Mendoza. Recorrido emocionante ideal para familias y grupos de amigos.",
     "Trekking y Rappel": "Trekking y Rappel",
-    "winery": "Bodegas",
-    "TrekkingDesc": "Vive experiencias únicas y emocionantes",
-    "Trekking y RaftingDesc": "Explora hermosos senderos naturales y Rafting en nuestros ríos",
-    "Trekking y RappelDesc": "Desafía tus límites en nuestras rutas de Rappel",
-    "wineryDesc": "Descubre los sabores de nuestros vinos locales"
-  },
-  "reviews": {
-    "title": "Reseñas de Clientes",
-    "juanComment": "Excelente experiencia, muy recomendable. Los guías son expertos y las actividades son emocionantes.",
-    "mariaComment": "Los paisajes son impresionantes y el servicio al cliente es excepcional. Definitivamente volveré.",
-    "carlosComment": "Una aventura inolvidable. Las actividades están bien organizadas y son adecuadas para todos los niveles.",
-    "anaComment": "Increíbles destinos y alojamientos. La atención a los detalles hace que cada viaje sea especial."
+    "Trekking y RappelDesc": "Trekking y Rappel en Garganta del Diablo. Ubicado a 80 kilómetros de la ciudad de Mendoza, El Salto, Potrerillos. Recorrido de 2 horas, de dificultad media-baja a 1700 metros sobre el nivel del mar."
   },
   "contact": {
     "title": "Contacto y Reservas",
     "phone": "Teléfono",
-    "email": "Correo Electrónico",
-    "address": "Dirección",
-    "schedule": "Horario de Atención",
-    "whatsapp": "Contactar por WhatsApp",
-    "sendEmail": "Enviar correo",
-    "viewMap": "Ver en Google Maps",
-    "weekdays": "Lunes a Viernes: 9:00 AM - 6:00 PM",
-    "saturday": "Sábados: 10:00 AM - 2:00 PM"
+    "email": "Correo Electrónico"
+    
   },
   "footer": {
     "slogan": "Descubre el mundo con nosotros",
@@ -46,10 +31,6 @@
     "vision": {
       "title": "Nuestra Visión",
       "content": "Aspiramos a ser líderes en la industria del turismo, reconocidos por nuestra innovación, sostenibilidad y excelencia en el servicio al cliente. Buscamos inspirar a las personas a explorar el mundo, fomentar el entendimiento intercultural y contribuir positivamente a las comunidades que visitamos."
+      }
     }
-  },
-  "destinations": {
-    "title": "Nuestros Destinos",
-    "bookNow": "Reservar ahora"
   }
-}

@@ -1,113 +1,118 @@
+/* Fuente global */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sección principal */
 .activities-section {
-  @apply py-12 relative;
-  
+  @apply py-20 relative; /* Aumentamos el padding vertical */
 }
 
 .activities-container {
   @apply container mx-auto px-4;
-  
 }
 
 .activities-title {
-  @apply text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white;
+  @apply text-5xl font-bold text-center mb-16 text-gray-800 dark:text-white; /* Título más grande y elegante */
 }
 
 .activities-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
-  
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10; /* Mayor espacio entre tarjetas */
 }
 
 .activity-card {
-  @apply bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300;
+  @apply bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300 relative;
   background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
 }
 
 .dark .activity-card {
   background-color: rgba(31, 41, 55, 0.8);
 }
 
-.activity-image-container {
-  @apply relative overflow-hidden;
-  
-}
-
-.activity-image {
-  @apply w-full h-48 object-cover transition-transform duration-300 ease-in-out;
-  border-radius: 15px;
-}
-
-.activity-overlay {
-  @apply absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 ease-in-out;
-  
-}
-
-.activity-description {
-  @apply text-white text-center px-4;
-}
-
-.activity-content {
-  @apply p-4;
+/* Contenedor del título */
+.activity-title-container {
+  @apply p-6 text-center bg-gray-100 dark:bg-gray-800;
 }
 
 .activity-name {
-  @apply text-xl font-semibold text-center text-gray-800 dark:text-white;
+  @apply text-2xl font-semibold text-gray-800 dark:text-white; /* Fuente más grande y estilizada */
 }
 
-.activity-card:hover .activity-image {
-  @apply transform scale-110;
-  
+/* Contenedor de la imagen */
+.activity-image-container {
+  @apply relative overflow-hidden h-[500px] md:h-[600px]; /* Altura más grande verticalmente */
 }
 
-.activity-card:hover .activity-overlay {
-  @apply opacity-100;
-  
+/* Slider */
+.activity-slider {
+  @apply flex transition-transform duration-300 ease-in-out;
 }
 
-/* Nuevo estilo para el efecto hover en móviles */
-@media (max-width: 492px) {
-  .activity-card.activity-hover .activity-overlay {
-    opacity: 1;
+.activity-image {
+  @apply w-full h-full object-cover transition-transform duration-300 ease-in-out;
+}
+
+/* Botones de navegación del slider */
+.slider-button {
+  @apply absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-12 h-12 flex items-center justify-center cursor-pointer z-10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.slider-button.prev {
+  @apply left-6;
+}
+
+.slider-button.next {
+  @apply right-6;
+}
+
+/* Contenedor de la descripción */
+.activity-description-container {
+  @apply p-6 bg-gray-50 dark:bg-gray-900 min-h-[150px]; /* Espacio uniforme para la descripción */
+}
+
+.activity-description {
+  @apply text-base leading-relaxed text-gray-600 dark:text-gray-300; /* Texto más grande y legible */
+}
+
+/* Ajustes para tablets */
+@media (max-width: 768px) {
+  .activities-grid {
+    @apply grid-cols-2;
   }
-  
-  .activity-card.activity-hover .activity-image {
-    transform: scale(1.1);
+
+  .activity-image-container {
+    @apply h-[400px]; /* Altura para tablets */
+  }
+}
+
+/* Ajustes específicos para móviles */
+@media screen and (max-width: 492px) {
+  .activities-section {
+    @apply py-12;
   }
 
-    .activities-section {
-      @apply py-6;
-    }
-  
-    .activities-container {
-      @apply px-2;
-    }
-  
-    .activities-title {
-      @apply text-2xl mb-4;
-    }
-  
-    .activities-grid {
-      @apply gap-3;
-    }
-  
-    .activity-card {
-      @apply shadow-sm;
-    }
-  
-    .activity-image {
-      @apply h-36;
-    }
-  
-    .activity-content {
-      @apply p-3;
-    }
-  
-    .activity-name {
-      @apply text-lg;
-    }
-  
-    .activity-description {
-      @apply text-sm;
-    }
+  .activities-container {
+    @apply px-2;
+  }
 
+  .activities-title {
+    @apply text-4xl mb-10;
+  }
+
+  .activities-grid {
+    @apply grid-cols-1 gap-8;
+  }
+
+  .activity-image-container {
+    @apply h-[300px]; /* Altura para móviles */
+  }
+
+  .activity-name {
+    @apply text-xl;
+  }
+
+  .activity-description {
+    @apply text-sm;
+  }
 }

@@ -1,20 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 interface NavbarLogoProps {
-  onLogoClick: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  onLogoClick: (e: React.MouseEvent<HTMLAnchorElement>) => void; // Actualizado para aceptar el evento
 }
 
 const NavbarLogo: React.FC<NavbarLogoProps> = ({ onLogoClick }) => {
   return (
     <div className="navbar-logo-wrapper">
-      <Link to="/" onClick={onLogoClick} className="navbar-logo-link">
-        <img 
-          src="/images/Logoprin1.png" 
-          alt="Instinto Nómade" 
+      <a href="/" onClick={(e) => { e.preventDefault(); onLogoClick(e); }} className="navbar-logo-link">
+        <img
+          src="/images/Logoprin1.png"
+          alt="Instinto Nómade Logo"
           className="navbar-logo-img"
         />
-      </Link>
+      </a>
     </div>
   );
 };

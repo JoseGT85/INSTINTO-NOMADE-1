@@ -6,32 +6,17 @@
   "activities": {
     "title": "Our Activities",
     "Trekking": "Trekking",
-    "Etrekking and Rafting": "Trekking and Rafting",
-    "Etrekking and Rappel": "Trekking and Rappel",
-    "winery": "Wineries",
-    "TrekkingDesc": "Live unique and exciting experiences",
-    "Etrekking and RaftingDesc": "Explore beautiful nature trails and rafting on our rivers",
-    "Etrekking and RappelDesc": "Challenge your limits on our Rappel routes",
-    "wineryDesc": "Discover the flavors of our local wines"
+    "TrekkingDesc": "Trekking on Mailhos Hill, located 90 kilometers from the city of Mendoza, in Valle del Sol, Las Vegas. It has an 8-kilometer round trip route, lasting approximately 3 hours and reaching an altitude of almost 3,000 meters above sea level. Medium-low difficulty, no technical challenges, and spectacular views.",
+    "Trekking y Rafting": "Trekking and Rafting",
+    "Trekking y RaftingDesc": "12-kilometer rafting with a duration of approximately 1 hour along the Mendoza River. An exciting route perfect for families and groups of friends.",
+    "Trekking y Rappel": "Trekking and Rappel",
+    "Trekking y RappelDesc": "Trekking and rappelling at Garganta del Diablo, located 80 kilometers from the city of Mendoza, in El Salto, Potrerillos. A 2-hour route with medium-low difficulty at 1,700 meters above sea level."
   },
-  "reviews": {
-    "title": "Customer Reviews",
-    "juanComment": "Excellent experience, highly recommended. The guides are experts and the activities are exciting.",
-    "mariaComment": "The landscapes are impressive and the customer service is exceptional. I will definitely come back.",
-    "carlosComment": "An unforgettable adventure. The activities are well organized and suitable for all levels.",
-    "anaComment": "Amazing destinations and accommodations. The attention to detail makes each trip special."
-  },
+  
   "contact": {
     "title": "Contact and Reservations",
     "phone": "Phone",
-    "email": "Email",
-    "address": "Address",
-    "schedule": "Office Hours",
-    "whatsapp": "Contact via WhatsApp",
-    "sendEmail": "Send email",
-    "viewMap": "View on Google Maps",
-    "weekdays": "Monday to Friday: 9:00 AM - 6:00 PM",
-    "saturday": "Saturday: 10:00 AM - 2:00 PM"
+    "email": "Email"
   },
   "footer": {
     "slogan": "Discover the world with us",
@@ -47,9 +32,5 @@
       "title": "Our Vision",
       "content": "We aspire to be leaders in the tourism industry, recognized for our innovation, sustainability, and excellence in customer service. We seek to inspire people to explore the world, foster intercultural understanding, and contribute positively to the communities we visit."
     }
-  },
-  "destinations": {
-    "title": "Our Destinations",
-    "bookNow": "Book Now"
   }
 }

@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Slider from './components/Slider/Slider';
 import Activities from './components/Activities/Activities';
-import Reviews from './components/Reviews/Reviews';
 import ContactInfo from './components/ContactInfo/ContactInfo';
 import Footer from './components/Footer/Footer';
 import Destinations from './components/Destinations/Destinations';
@@ -28,7 +27,6 @@ function App() {
                   <Slider />
                   <div className="content-sections">
                     <Activities />
-                    <Reviews />
                     <ContactInfo />
                   </div>
                 </>
