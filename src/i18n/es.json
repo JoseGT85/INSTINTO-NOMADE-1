@@ -1,7 +1,7 @@
 {
   "navbar": {
-    "activities": "Inicio",
-    "aboutUs": "Quiénes Somos"
+    "home": "Inicio",
+    "aboutUs": "Quiénes somos"
   },
   "activities": {
     "title": "Nuestras Actividades",

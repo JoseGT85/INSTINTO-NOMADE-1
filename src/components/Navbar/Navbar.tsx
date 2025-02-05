@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useTheme } from '../../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import NavbarLogo from './NavbarLogo';
-import NavbarMenu from './NavbarMenu';
 import NavbarControls from './NavbarControls';
 import './Navbar.css';
 
@@ -22,7 +21,6 @@ const Navbar: React.FC = () => {
         setIsNavbarVisible(false);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -56,38 +54,34 @@ const Navbar: React.FC = () => {
     <>
       {/* Logo siempre visible */}
       <NavbarLogo onLogoClick={scrollToTop} />
-
       {/* Navbar que se oculta/muestra según el scroll */}
       <nav className={`navbar ${isNavbarVisible ? 'visible' : 'hidden'}`}>
-      <div className="navbar-container">
-  {/* Logo */}
-  <div className="navbar-logo-wrapper">
-    <NavbarLogo onLogoClick={scrollToTop} />
-  </div>
-
-  {/* Botones y controles */}
-  <div className="navbar-right">
-    <div className="navbar-menu">
-      {/* Botón Inicio */}
-      <a href="/#home" onClick={scrollToTop} className="navbar-link">
-        Inicio
-      </a>
-
-      {/* Botón Quiénes somos */}
-      <a href="/quienes-somos" className="navbar-link">
-        {t('navbar.aboutUs')}
-      </a>
-    </div>
-
-    {/* Controles (Tema e Idioma) */}
-    <NavbarControls 
-      theme={theme}
-      toggleTheme={toggleTheme}
-      i18n={i18n}
-      changeLanguage={changeLanguage}
-    />
-  </div>
-</div>
+        <div className="navbar-container">
+          {/* Logo */}
+          <div className="navbar-logo-wrapper">
+            <NavbarLogo onLogoClick={scrollToTop} />
+          </div>
+          {/* Botones y controles */}
+          <div className="navbar-right">
+            <div className="navbar-menu">
+              {/* Botón Inicio */}
+              <a href="/#home" onClick={scrollToTop} className="navbar-link">
+                {t('navbar.home')} {/* Usa la traducción */}
+              </a>
+              {/* Botón Quiénes somos */}
+              <a href="/quienes-somos" className="navbar-link">
+                {t('navbar.aboutUs')} {/* Usa la traducción */}
+              </a>
+            </div>
+            {/* Controles (Tema e Idioma) */}
+            <NavbarControls
+              theme={theme}
+              toggleTheme={toggleTheme}
+              i18n={i18n}
+              changeLanguage={changeLanguage}
+            />
+          </div>
+        </div>
       </nav>
     </>
   );
