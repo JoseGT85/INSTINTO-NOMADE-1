@@ -28,7 +28,7 @@
 }
 
 .navbar-logo-img {
-  @apply h-20 w-auto transition-all duration-300; /* Tamaño para escritorio */
+  @apply h-24 w-auto transition-all duration-300; /* Tamaño para escritorio */
   position: fixed; /* Posicionamiento fijo */
   top: 2rem; /* Distancia desde la parte superior */
   left: 2rem; /* Distancia desde la izquierda */
@@ -47,7 +47,7 @@
 
 @media (max-width: 492px) {
   .navbar-logo-img {
-    @apply h-12; /* Tamaño aún más pequeño para móviles */
+    @apply h-14; /* Tamaño aún más pequeño para móviles */
     top: 0.5rem; /* Menor distancia desde la parte superior */
     left: 0.5rem; /* Menor distancia desde la izquierda */
   }
