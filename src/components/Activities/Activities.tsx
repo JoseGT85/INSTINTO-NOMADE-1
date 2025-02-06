@@ -20,7 +20,7 @@ const activities: Activity[] = [
     name: 'Trekking y Rafting',
     description:
       'Rafting de 12 kilómetros con duración de 1 hora aproximadamente por el Río Mendoza. Recorrido emocionante ideal para familias y grupos de amigos.',
-    images: ['/images/potrerillos.jpeg', '/images/Rafting.jpg', '/images/rafting1.jpg'],
+    images: ['/images/Rafting.jpg', '/images/rafting1.jpg'],
   },
   {
     name: 'Trekking y Rappel',
