@@ -14,13 +14,13 @@ const activities: Activity[] = [
     name: 'Trekking',
     description:
       'Trekking en el cerro Mailhos ubicado a 90 kilómetros de la ciudad de Mendoza, en Valle del Sol, Las Vegas. Tiene un recorrido de 8 kilómetros de ida y vuelta, con una duración de 3 horas aproximadamente y una altitud de casi 3.000 metros sobre el nivel del mar. Dificultad media-baja, sin dificultad técnica y vistas espectaculares.',
-    images: ['/images/Trekking.jpeg', '/images/Trekking2.jpeg'],
+    images: ['/images/Trekking.png', '/images/cactus.jpg'],
   },
   {
     name: 'Trekking y Rafting',
     description:
       'Rafting de 12 kilómetros con duración de 1 hora aproximadamente por el Río Mendoza. Recorrido emocionante ideal para familias y grupos de amigos.',
-    images: ['/images/potrerillos.jpeg', '/images/Rafting2.jpeg'],
+    images: ['/images/potrerillos.jpeg', '/images/Rafting.jpg', '/images/rafting1.jpg'],
   },
   {
     name: 'Trekking y Rappel',
