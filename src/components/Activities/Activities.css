@@ -5,99 +5,106 @@ body {
 
 /* Sección principal */
 .activities-section {
-  @apply py-20 relative; /* Aumentamos el padding vertical */
+  @apply py-24 relative bg-gray-50 dark:bg-gray-900;
 }
 
 .activities-container {
-  @apply container mx-auto px-4;
+  @apply container mx-auto px-4 max-w-7xl;
 }
 
 .activities-title {
-  @apply text-5xl font-bold text-center mb-16 text-gray-800 dark:text-white; /* Título más grande y elegante */
+  @apply text-5xl font-bold text-center mb-20 text-gray-800 dark:text-white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
 }
 
 .activities-grid {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10; /* Mayor espacio entre tarjetas */
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12;
 }
 
 .activity-card {
-  @apply bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transition-all duration-300 relative;
-  background-color: rgba(255, 255, 255, 0.8);
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all duration-300 relative;
+  transform: translateY(0);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.dark .activity-card {
-  background-color: rgba(31, 41, 55, 0.8);
+.activity-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 /* Contenedor del título */
 .activity-title-container {
-  @apply p-6 text-center bg-gray-100 dark:bg-gray-800;
+  @apply p-6 text-center bg-gray-100 dark:bg-gray-700;
 }
 
 .activity-name {
-  @apply text-2xl font-semibold text-gray-800 dark:text-white; /* Fuente más grande y estilizada */
+  @apply text-2xl font-semibold text-gray-800 dark:text-white;
 }
 
 /* Contenedor de la imagen */
 .activity-image-container {
-  @apply relative overflow-hidden h-[500px] md:h-[600px]; /* Altura más grande verticalmente */
+  @apply relative overflow-hidden h-[400px] md:h-[500px];
 }
 
 /* Slider */
 .activity-slider {
-  @apply flex transition-transform duration-300 ease-in-out;
+  @apply relative w-full h-full;
 }
 
 .activity-image {
-  @apply w-full h-full object-cover transition-transform duration-300 ease-in-out;
+  @apply w-full h-full object-cover transition-opacity duration-300 ease-in-out;
 }
 
 /* Botones de navegación del slider */
 .slider-button {
-  @apply absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-12 h-12 flex items-center justify-center cursor-pointer z-10;
+  @apply absolute top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white rounded-full w-12 h-12 flex items-center justify-center cursor-pointer z-10 transition-all duration-300 ease-in-out;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.slider-button:hover {
+  @apply bg-opacity-70;
+}
+
 .slider-button.prev {
-  @apply left-6;
+  @apply left-4;
 }
 
 .slider-button.next {
-  @apply right-6;
+  @apply right-4;
 }
 
 /* Contenedor de la descripción */
 .activity-description-container {
-  @apply p-6 bg-gray-50 dark:bg-gray-900 min-h-[150px]; /* Espacio uniforme para la descripción */
+  @apply p-6 bg-gray-50 dark:bg-gray-900;
 }
 
 .activity-description {
-  @apply text-base leading-relaxed text-gray-600 dark:text-gray-300; /* Texto más grande y legible */
+  @apply text-base leading-relaxed text-gray-600 dark:text-gray-300;
 }
 
 /* Ajustes para tablets */
 @media (max-width: 768px) {
   .activities-grid {
-    @apply grid-cols-2;
+    @apply grid-cols-1 md:grid-cols-2;
   }
 
   .activity-image-container {
-    @apply h-[400px]; /* Altura para tablets */
+    @apply h-[350px];
   }
 }
 
 /* Ajustes específicos para móviles */
 @media screen and (max-width: 492px) {
   .activities-section {
-    @apply py-12;
+    @apply py-16;
   }
 
   .activities-container {
-    @apply px-2;
+    @apply px-4;
   }
 
   .activities-title {
-    @apply text-4xl mb-10;
+    @apply text-4xl mb-12;
   }
 
   .activities-grid {
@@ -105,7 +112,7 @@ body {
   }
 
   .activity-image-container {
-    @apply h-[300px]; /* Altura para móviles */
+    @apply h-[250px];
   }
 
   .activity-name {
@@ -115,4 +122,14 @@ body {
   .activity-description {
     @apply text-sm;
   }
+}
+
+/* Animación para el cambio de imágenes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.activity-image {
+  animation: fadeIn 0.5s ease-in-out;
 }
