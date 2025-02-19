@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import NavbarLogo from './NavbarLogo';
 import NavbarControls from './NavbarControls';
 import { Menu, X } from 'lucide-react';
-import { Link, useNavigate } from 'react-router-dom'; // Importa useNavigate
+import { Link, useLocation } from 'react-router-dom'; // Importa useLocation
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const [isNavbarVisible, setIsNavbarVisible] = useState(true);
-  const navigate = useNavigate(); // Hook para navegación programática
+  const location = useLocation(); // Hook para detectar cambios en la ruta
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +33,11 @@ const Navbar: React.FC = () => {
     }
   }, []);
 
+  // Cerrar el menú cuando cambia la ruta
+  useEffect(() => {
+    setIsOpen(false); // Cierra el menú automáticamente
+  }, [location]);
+
   const toggleMenu = () => {
     setIsOpen(!isOpen);
     document.body.style.overflow = !isOpen ? 'hidden' : 'auto';
@@ -50,22 +55,18 @@ const Navbar: React.FC = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Desplazamiento suave
+      behavior: 'smooth',
     });
   };
 
   const handleLogoClick = () => {
-    navigate('/'); // Redirige a la página principal
-    setTimeout(() => {
-      scrollToTop(); // Asegura el desplazamiento suave después de la redirección
-    }, 50); // Pequeño retraso para permitir la carga de la página
+    scrollToTop();
+    closeMenu(); // Asegura que el menú se cierre al hacer clic en el logo
   };
 
   const handleHomeClick = () => {
-    navigate('/'); // Redirige a la página principal
-    setTimeout(() => {
-      scrollToTop(); // Asegura el desplazamiento suave después de la redirección
-    }, 50); // Pequeño retraso para permitir la carga de la página
+    scrollToTop();
+    closeMenu(); // Asegura que el menú se cierre al hacer clic en "Inicio"
   };
 
   return (
