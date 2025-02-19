@@ -3,104 +3,117 @@
   @apply fixed top-0 left-0 right-0 z-50 transition-all duration-300;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), transparent);
 }
-
 .navbar-container {
-  @apply container mx-auto flex justify-end items-center h-20; /* Todo alineado a la derecha */
+  @apply container mx-auto flex justify-end items-center h-20;
 }
-
-/* Ocultar la navbar */
+/* Ocultar/Mostrar navbar */
 .navbar.hidden {
-  transform: translateY(-100%); /* Mover la navbar hacia arriba */
+  transform: translateY(-100%);
 }
-
-/* Mostrar la navbar */
 .navbar.visible {
-  transform: translateY(0); /* Restaurar la posición original */
+  transform: translateY(0);
 }
-
 /* Logo styles */
 .navbar-logo-wrapper {
   @apply relative z-50;
 }
-
 .navbar-logo-link {
   @apply block transition-transform duration-300;
 }
-
 .navbar-logo-img {
-  @apply h-24 w-auto transition-all duration-300; /* Tamaño para escritorio */
-  position: fixed; /* Posicionamiento fijo */
-  top: 2rem; /* Distancia desde la parte superior */
-  left: 2rem; /* Distancia desde la izquierda */
-  z-index: 999; /* Asegura que esté por encima de otros elementos */
+  @apply h-24 w-auto transition-all duration-300;
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  z-index: 999;
   opacity: 1;
   pointer-events: auto;
 }
-
-@media (max-width: 768px) {
-  .navbar-logo-img {
-    @apply h-16; /* Tamaño reducido para tablets */
-    top: 1rem; /* Menor distancia desde la parte superior */
-    left: 1rem; /* Menor distancia desde la izquierda */
-  }
-}
-
-@media (max-width: 492px) {
-  .navbar-logo-img {
-    @apply h-14; /* Tamaño aún más pequeño para móviles */
-    top: 0.5rem; /* Menor distancia desde la parte superior */
-    left: 0.5rem; /* Menor distancia desde la izquierda */
-  }
-}
-
 /* Menu styles */
 .navbar-menu {
-  @apply hidden md:flex items-center space-x--1 justify-end; /* Alineación a la derecha */
+  @apply flex items-center space-x-4 justify-end;
 }
-
 .navbar-link {
   @apply text-white hover:text-yellow-200 transition-colors duration-200;
   padding: 0 1rem;
   display: inline-block;
 }
-
 /* Contenedor derecho */
 .navbar-right {
-  @apply flex items-center space-x-4 justify-end; /* Alineación a la derecha */
+  @apply flex items-center space-x-4 justify-end;
 }
-
 /* Controls styles */
 .navbar-controls {
   @apply flex items-center space-x-4;
 }
-
 .theme-toggle,
 .language-button {
   @apply p-2 rounded-full text-white hover:bg-orange-600 transition-colors duration-200;
 }
-
 .language-button.active {
   @apply bg-orange-600;
 }
-
 .flag-icon {
-  @apply w-6 h-4 object-cover; /* Mantener el tamaño original */
+  @apply w-6 h-4 object-cover;
 }
-
-/* Menú hamburguesa para móviles */
+/* Menú hamburguesa */
 .menu-toggle {
-  @apply block md:hidden; /* Visible solo en móviles */
+  @apply hidden;
 }
-
-.navbar-mobile-menu {
-  @apply hidden md:hidden absolute top-20 right-0 bg-black bg-opacity-90 w-64 h-screen z-50 transition-transform duration-300;
-  transform: translateX(100%);
+/* Overlay del menú móvil */
+.mobile-menu-overlay {
+  @apply fixed inset-0 bg-black bg-opacity-50 z-40;
+  display: none;
 }
-
-.navbar-mobile-menu.open {
-  transform: translateX(0);
+.mobile-menu-overlay.open {
+  display: block;
 }
-
-.navbar-mobile-link {
-  @apply block text-white py-4 px-6 hover:bg-orange-600 transition-colors duration-200;
+/* Media queries para tablets y móviles */
+@media (max-width: 768px) {
+  .navbar-logo-img {
+    @apply h-16;
+    top: 1rem;
+    left: 1rem;
+  }
+  .menu-toggle {
+    @apply block text-white p-2 hover:text-yellow-200 transition-colors duration-200;
+  }
+  .navbar-menu {
+    @apply fixed top-0 right-0 flex-col items-end bg-black bg-opacity-90 w-64 min-h-screen; /* Elementos en la parte superior */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    justify-content: flex-start;
+  }
+  .navbar-menu.open {
+    transform: translateX(0);
+  }
+  .navbar-link {
+    @apply w-full py-3 px-6 hover:bg-orange-600;
+  }
+}
+@media (max-width: 492px) {
+  .navbar-logo-img {
+    @apply h-14;
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+  .navbar-container {
+    @apply h-14 px-2;
+  }
+  .navbar-controls {
+    @apply space-x-2;
+  }
+  .theme-toggle,
+  .language-button {
+    @apply p-1.5;
+  }
+  .flag-icon {
+    @apply w-4 h-3;
+  }
+  .navbar-menu {
+    @apply w-full;
+  }
+  .navbar-link {
+    @apply text-sm;
+  }
 }

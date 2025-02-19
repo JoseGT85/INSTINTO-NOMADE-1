@@ -3,21 +3,20 @@ import { useTheme } from '../../contexts/ThemeContext';
 import { useTranslation } from 'react-i18next';
 import NavbarLogo from './NavbarLogo';
 import NavbarControls from './NavbarControls';
+import { Menu, X } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const { t, i18n } = useTranslation();
-  const [isNavbarVisible, setIsNavbarVisible] = useState(true); // Estado para controlar la visibilidad de la navbar
+  const [isNavbarVisible, setIsNavbarVisible] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {
-        // Mostrar el navbar solo cuando estás en la parte superior
         setIsNavbarVisible(true);
       } else {
-        // Ocultar el navbar al hacer scroll hacia abajo
         setIsNavbarVisible(false);
       }
     };
@@ -25,7 +24,6 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Cambiar tema si está guardado en localStorage
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme && savedTheme !== theme) {
@@ -33,56 +31,71 @@ const Navbar: React.FC = () => {
     }
   }, []);
 
-  // Alternar menú móvil
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+    document.body.style.overflow = !isOpen ? 'hidden' : 'auto';
+  };
 
-  // Cambiar idioma
+  const closeMenu = () => {
+    setIsOpen(false);
+    document.body.style.overflow = 'auto';
+  };
+
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };
 
-  // Scroll suave al inicio
   const scrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault(); // Previene el comportamiento predeterminado del enlace
+    e.preventDefault();
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', // Desplazamiento suave
+      behavior: 'smooth',
     });
+    closeMenu(); // Cerrar el menú al navegar
   };
 
   return (
     <>
       {/* Logo siempre visible */}
       <NavbarLogo onLogoClick={scrollToTop} />
+
       {/* Navbar que se oculta/muestra según el scroll */}
       <nav className={`navbar ${isNavbarVisible ? 'visible' : 'hidden'}`}>
         <div className="navbar-container">
-          {/* Logo */}
-          <div className="navbar-logo-wrapper">
-            <NavbarLogo onLogoClick={scrollToTop} />
+          {/* Botón del menú hamburguesa */}
+          <button
+            className="menu-toggle"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Menú principal */}
+          <div className={`navbar-menu ${isOpen ? 'open' : ''}`}>
+            <a href="/#home" onClick={scrollToTop} className="navbar-link">
+              {t('navbar.home')}
+            </a>
+            <a href="/quienes-somos" onClick={closeMenu} className="navbar-link">
+              {t('navbar.aboutUs')}
+            </a>
           </div>
-          {/* Botones y controles */}
-          <div className="navbar-right">
-            <div className="navbar-menu">
-              {/* Botón Inicio */}
-              <a href="/#home" onClick={scrollToTop} className="navbar-link">
-                {t('navbar.home')} {/* Usa la traducción */}
-              </a>
-              {/* Botón Quiénes somos */}
-              <a href="/quienes-somos" className="navbar-link">
-                {t('navbar.aboutUs')} {/* Usa la traducción */}
-              </a>
-            </div>
-            {/* Controles (Tema e Idioma) */}
-            <NavbarControls
-              theme={theme}
-              toggleTheme={toggleTheme}
-              i18n={i18n}
-              changeLanguage={changeLanguage}
-            />
-          </div>
+
+          {/* Controles (Tema e Idioma) */}
+          <NavbarControls
+            theme={theme}
+            toggleTheme={toggleTheme}
+            i18n={i18n}
+            changeLanguage={changeLanguage}
+          />
         </div>
       </nav>
+
+      {/* Overlay para cerrar el menú al hacer clic fuera */}
+      <div
+        className={`mobile-menu-overlay ${isOpen ? 'open' : ''}`}
+        onClick={closeMenu}
+      />
     </>
   );
 };
