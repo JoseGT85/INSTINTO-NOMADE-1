@@ -1,19 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface NavbarLogoProps {
-  onLogoClick: (e: React.MouseEvent<HTMLAnchorElement>) => void; // Actualizado para aceptar el evento
+  onLogoClick: () => void; // Función para manejar el clic en el logo
 }
 
 const NavbarLogo: React.FC<NavbarLogoProps> = ({ onLogoClick }) => {
   return (
     <div className="navbar-logo-wrapper">
-      <a href="/" onClick={(e) => { e.preventDefault(); onLogoClick(e); }} className="navbar-logo-link">
+      <Link to="/" onClick={onLogoClick} className="navbar-logo-link">
         <img
-          src="/images/Logoprin1.png"
+          src="/images/Logoprin1.png" // Asegúrate de que esta ruta sea correcta
           alt="Instinto Nómade Logo"
           className="navbar-logo-img"
         />
-      </a>
+      </Link>
     </div>
   );
 };

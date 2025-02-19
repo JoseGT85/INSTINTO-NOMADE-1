@@ -38,7 +38,7 @@ function App() {
           <Footer />
           <WhatsAppButton />
         </div>
-      </Router>
+        </Router>
     </ThemeProvider>
   );
 }
