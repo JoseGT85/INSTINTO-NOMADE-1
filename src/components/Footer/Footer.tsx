@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
         <div className="footer-social">
           <a href="#" className="footer-social-link"><Facebook /></a>
           <a href="#" className="footer-social-link"><Twitter /></a>
-          <a href="#" className="footer-social-link"><Instagram /></a>
+          <a href="https://www.instagram.com/instintonomadearg?igsh=ajJqbnl2bDcwaHFz" target="_blank" rel="noopener noreferrer" className="footer-social-link"><Instagram /></a>
           <a href="#" className="footer-social-link"><Youtube /></a>
         </div>
       </div>
